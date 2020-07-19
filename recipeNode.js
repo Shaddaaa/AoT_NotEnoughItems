@@ -44,13 +44,13 @@ class RecipeNode {
         element.appendChild(priceDiv);
 
         let profitDiv = document.createElement("div");
-        profitDiv.innerHTML = "&emsp;merchant prize: " + this.wantedItem.price;
+        profitDiv.innerHTML = "&emsp;merchant price: " + this.wantedItem.price;
         profitDiv.classList.toggle("small");
         element.appendChild(profitDiv);
 
-        let merchantPrizeDiv = document.createElement("div");
-        merchantPrizeDiv.innerHTML = "&emsp;profit: " + Math.round(this.wantedItem.price/this.prodCost*1000)/10 + "%";
-        merchantPrizeDiv.classList.toggle("small");
-        element.appendChild(merchantPrizeDiv);
+        let merchantPriceDiv = document.createElement("div");
+        merchantPriceDiv.innerHTML = "&emsp;profit: " + Math.round(this.wantedItem.price/this.prodCost*1000)/10 + "%";
+        merchantPriceDiv.classList.toggle("small");
+        element.appendChild(merchantPriceDiv);
     }
 }
