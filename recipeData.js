@@ -17,7 +17,7 @@ let craftingRecipeData = [
         "Chisel": 1
       },
       "results": {
-        "Opal": 2.5,
+        "Opal": 1,
         "Chisel": 1
       }
     },
@@ -27,7 +27,7 @@ let craftingRecipeData = [
         "Chisel": 1
       },
       "results": {
-        "Ruby": 2.5,
+        "Ruby": 1,
         "Chisel": 1
       }
     },

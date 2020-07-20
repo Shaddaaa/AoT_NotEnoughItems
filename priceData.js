@@ -68,7 +68,9 @@ let priceData = {
     "Roasted carp": "250",
     "Roasted catfish": "300",
     "Log": "5",
-    "Roasted small guadalupe bass": "40"
+    "Roasted small guadalupe bass": "40",
+    "Opal": "17000",
+    "Ruby": "13000"
 }
 
 //add time as a resource
