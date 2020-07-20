@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <link rel="stylesheet" href="treeView.css">
+<link rel="stylesheet" href="resourceBreakDownTable.css">
 <link rel="stylesheet" href="general.css">
 <script src="utility.js"></script>
 <script src="recipeData.js"></script>
@@ -14,8 +15,8 @@
 <form action="" onsubmit="return getRecipeForInput()">
     <label for="itemname">Item:</label>
     <input type="text" id="itemname" name="itemname" autocomplete="off"><br><br>
-    <input type="submit" value="Search">
+    <input type="submit" value="Search" class="btn btn-sm btn-primary">
   </form> 
-<ul id="recipeDisplay">
+<ul id="recipeDisplay" class="trimmed">
 
 </ul>

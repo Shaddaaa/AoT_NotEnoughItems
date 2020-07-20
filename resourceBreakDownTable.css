@@ -1,0 +1,13 @@
+.resourceBreakdown {
+    border-collapse: collapse;
+}
+
+.resourceBreakdown > tr {
+    margin-bottom: 0.1vw;
+}
+
+.resourceBreakdown > tr > td {
+    border-style: solid;
+    border-width: 0.1vw;
+    border-color: black;
+}

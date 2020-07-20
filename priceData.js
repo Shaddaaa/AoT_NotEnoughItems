@@ -69,4 +69,7 @@ let priceData = {
     "Roasted catfish": "300",
     "Log": "5",
     "Roasted small guadalupe bass": "40"
-  }
+}
+
+//add time as a resource
+priceData["time"] = 0;

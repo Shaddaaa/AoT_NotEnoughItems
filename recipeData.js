@@ -1,6 +1,6 @@
 //an array, each element contains one recipe object that looks like this: {ingredients, results}, 
 //ingredient and results each are objects containing: name:count pairs
-let recipeData = [
+let craftingRecipeData = [
     {
       "ingredients": {
         "Wooden stick": 1,
@@ -135,4 +135,4 @@ let recipeData = [
         "Chisel": 1
       }
     }
-  ]
+];
