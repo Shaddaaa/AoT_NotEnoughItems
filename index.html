@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<link rel="stylesheet" href="treeView.css">
-<link rel="stylesheet" href="resourceBreakDownTable.css">
-<link rel="stylesheet" href="general.css">
+<link rel="stylesheet" href="styles/pageLayout.css">
+<link rel="stylesheet" href="styles/colorScheme.css">
+<link rel="stylesheet" href="styles/general.css">
+<link rel="stylesheet" href="styles/treeView.css">
+<link rel="stylesheet" href="styles/resourceBreakDownTable.css">
 <script src="utility.js"></script>
 <script src="recipeData.js"></script>
 <script src="priceData.js"></script>
@@ -10,13 +12,39 @@
 <script src="recipe.js"></script>
 <script src="recipeNode.js"></script>
 <script src="item.js"></script>
-<script src="script.js"></script>
 <script src="UIFunctions.js"></script>
-<form action="" onsubmit="return getRecipeForInput()">
-    <label for="itemname">Item:</label>
-    <input type="text" id="itemname" name="itemname" autocomplete="off"><br><br>
-    <input type="submit" value="Search" class="btn btn-sm btn-primary">
-  </form> 
-<ul id="recipeDisplay" class="trimmed">
+<script src="script.js"></script>
 
 </ul>
+<body onload="onload()">
+  <div id="mainContainer">
+    <div id="menu">
+        <div id="mbMain" class="menubutton" onclick="switchTab('main')">Main</div>
+        <div id="mbSettings" class="menubutton" onclick="switchTab('settings')">Settings</div>
+      </div>
+    <div id="tabContainer">
+      <div id="mainTab">
+        <div id="itemSearch">
+          <form action="" onsubmit="return getRecipeForInput()">
+            <input class="txtInput" type="text" id="itemSearchBar" name="itemName" placeholder="Search for an item..." autocomplete="off">
+          </form> 
+          Better Item Search Coming Soon
+        </div>
+        <div id="recipeTree">
+          <h2>Recipe Tree:</h2>
+          <ul id="recipeDisplay" class="trimmed"></ul>
+        </div>
+        <div id="resourceBreakDown">
+          <h2>Resource Breakdown:</h2>
+        </div>
+        <div id="recipeList">
+          <h2>Recipe List:</h2>
+          Coming Soon
+        </div>
+      </div>
+      <div id="settingsTab" style="display:none">
+        Settings Coming Soon
+      </div>
+    </div>
+  </div>
+</body>

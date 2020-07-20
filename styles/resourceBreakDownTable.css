@@ -1,0 +1,22 @@
+.resourceBreakdownTable {
+    /*
+    width always has to be 100-2*margin
+    */
+    margin: 2%;
+    width: 96%;
+
+    border-collapse: collapse;
+}
+
+.resourceBreakdownTable > tr {
+    margin-bottom: 0.1vw;
+}
+
+.resourceBreakdownTable > tr > td {
+    border-style: solid;
+    border-width: 0.1vw;
+}
+
+.resourceBreakdownTable > tr > td:nth-child(2) {
+    text-align: right;
+}

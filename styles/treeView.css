@@ -2,13 +2,7 @@
 ul {
     list-style-type: none;
 }
-  
-/* Remove margins and padding from the ul */
-.trimmed {
-    margin: 0;
-    padding: 0;
-}
-  
+
 /* Style the caret/arrow */
 .caret {
     cursor: pointer;
@@ -18,7 +12,6 @@ ul {
 /* Create the caret/arrow with a unicode, and style it */
 .caret::before {
     content: "\25B6";
-    color: black;
     display: inline-block;
     margin-right: 6px;
 }
@@ -31,6 +24,7 @@ ul {
 /* Hide the nested list */
 .nested {
     display: none;
+    margin-left: 2vw;
 }
   
 /* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */

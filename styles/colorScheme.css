@@ -1,0 +1,66 @@
+* {
+    color: white;
+}
+
+html {
+    /*This purple should never be visible*/
+    background: purple;
+}
+
+#mainContainer {
+    background: black;
+}
+
+#menu {
+    background: rgb(20, 20, 20);
+
+    border-color: white;
+}
+
+#tabContainer {
+    /*This purple should never be visible*/
+    background: purple;
+}
+
+#mainTab {
+    background: black;
+}
+
+#itemSearch {
+    background: rgb(0, 0, 0);
+
+    border-color: white;
+}
+
+#itemSearchBar {
+    background: black;
+}
+
+#recipeTree {
+    background: rgb(0, 0, 0);
+
+    border-color: white;
+}
+
+#resourceBreakDown {
+    background: rgb(0, 0, 0);
+
+    border-color: white;
+}
+
+.resourceBreakdownTable > tr > td {
+    border-color: black;
+}
+
+#recipeList {
+    background: rgb(0, 0, 0);
+}
+
+#settingsTab {
+    background: black;
+}
+
+.btn {
+    background: rgb(88, 88, 88);
+    border-color: black;
+}
