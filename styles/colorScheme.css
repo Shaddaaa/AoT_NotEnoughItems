@@ -23,8 +23,6 @@ html {
 }
 
 .menubutton:hover {
-    cursor: pointer;
-    text-decoration: underline;
     background: rgb(66, 66, 66);
 }
 
