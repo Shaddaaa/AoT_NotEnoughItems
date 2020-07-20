@@ -66,6 +66,6 @@ function reloadData() {
 }
 reloadData();
 function onload() {
-	getRecipeFor("tinder");
-	console.log("Remember to disable the debug stuff before commiting")
+	//getRecipeFor("tinder");
+	//console.log("Remember to disable the debug stuff before commiting")
 }
