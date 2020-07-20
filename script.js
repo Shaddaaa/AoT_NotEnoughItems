@@ -18,7 +18,7 @@ function reloadData() {
 	//merge all recipeDatas into one object and add appropriate time requirements
 	let recipeData = [];
 	for (let craftingRecipeInput of craftingRecipeData) {
-		craftingRecipeInput.ingredients["time"] = 3;
+		craftingRecipeInput.ingredients["time"] = 1;
 		recipeData.push(craftingRecipeInput);
 	}
 
@@ -65,7 +65,7 @@ function reloadData() {
 	}
 }
 reloadData();
+
 function onload() {
-	//getRecipeFor("tinder");
-	//console.log("Remember to disable the debug stuff before commiting")
+	setUpItemSearchList();
 }

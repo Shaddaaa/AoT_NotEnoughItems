@@ -1,9 +1,26 @@
 let activeRecipeNode;
 
 //function called by form submit
-function getRecipeForInput() {
-    event.preventDefault();
-    getRecipeFor(document.getElementById("itemSearchBar").value.toLowerCase());
+function getRecipeForInput(event) {
+    let input = document.getElementById("itemSearchBar").value.toLowerCase();
+    if (event.key=="Enter") {
+        let itemList = document.getElementById("itemList").children;
+        for (let i = 0; i < itemList.length; i++) {
+            if (itemList[i].style.display != "none") {
+                getRecipeFor(itemList[i].children[0].innerHTML.toLowerCase());
+                return;
+            }
+        }
+        getRecipeFor();
+        return;
+    }
+    for (let [key, item] of Object.entries(items)) {
+        if (item.name.indexOf(input)!=-1) {
+            document.getElementById("itemLI" + item.name).style.display = "block";
+        } else {
+            document.getElementById("itemLI" + item.name).style.display = "none";
+        }
+    }
 }
 
 //function called by menu buttons
@@ -21,9 +38,9 @@ function switchTab(name) {
 //creates the cheapest recipeNode for the item and displays it
 function getRecipeFor(itemName) {
     let display = document.getElementById("recipeDisplay");
-    let resourceBreakDown = document.getElementById("resourceBreakDown");
 
     if (items[itemName]!=null) {
+        let resourceBreakDown = document.getElementById("resourceBreakDown");
         display.innerHTML = "";
         activeRecipeNode = items[itemName].getCheapestRecipeTree();
         activeRecipeNode.updateWantedAmount(1);
@@ -59,3 +76,39 @@ function createResourceBreakdown(recipeNode) {
     return table;
 }
 
+function setUpItemSearchList() {
+    let ul = document.getElementById("itemList");
+    ul.innerHTML = "";
+    for (let [key, item] of Object.entries(items)) {
+        let li = document.createElement("li");
+        li.id = "itemLI" + item.name;
+        li.classList.toggle("itemLI");
+        li.addEventListener("click", () => {
+            getRecipeFor(item.name);
+        });
+
+        let nameSpan = document.createElement("span");
+        nameSpan.innerHTML = upEveryFirstLetter(item.name);
+        li.appendChild(nameSpan);
+
+        let infoDiv = document.createElement("div");
+        let priceDiv = document.createElement("div");
+        priceDiv.classList.toggle("itemPrice");
+        priceDiv.innerHTML = "Price: " + item.price;
+        infoDiv.appendChild(priceDiv);
+        li.appendChild(infoDiv);
+
+        ul.appendChild(li);
+    }
+
+    //sort the item list
+    let sort_by_name = function(a, b) {
+        return a.innerHTML.toLowerCase().localeCompare(b.innerHTML.toLowerCase());
+    }
+
+    let list = Array.from(document.querySelectorAll("#itemList > .itemLI"));
+    list.sort(sort_by_name);
+    for (var i = 0; i < list.length; i++) {
+        list[i].parentNode.appendChild(list[i]);
+    }
+}

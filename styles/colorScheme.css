@@ -22,6 +22,12 @@ html {
     border-color: white;
 }
 
+.menubutton:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    background: rgb(66, 66, 66);
+}
+
 #tabContainer {
     background: purple;
 }
@@ -38,6 +44,16 @@ html {
 
 #itemSearchBar {
     background: black;
+}
+
+.itemLI:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    background: rgb(66, 66, 66);
+}
+
+.itemPrice {
+    color: rgb(0, 199, 0);
 }
 
 #recipeTree {

@@ -25,10 +25,8 @@
     <div id="tabContainer">
       <div id="mainTab">
         <div id="itemSearch">
-          <form action="" onsubmit="return getRecipeForInput()">
-            <input class="txtInput" type="text" id="itemSearchBar" name="itemName" placeholder="Search for an item..." autocomplete="off">
-          </form> 
-          Better Item Search Coming Soon
+          <input id="itemSearchBar" class="txtInput" type="text" onkeyup="getRecipeForInput(event)" name="itemName" placeholder="Search for an item..." autocomplete="off">
+          <ul id="itemList"></ul>
         </div>
         <div id="recipeTree">
           <h2>Recipe Tree:</h2>
