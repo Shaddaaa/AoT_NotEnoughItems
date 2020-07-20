@@ -13,6 +13,26 @@ let craftingRecipeData = [
     },
     {
       "ingredients": {
+        "Uncut opal": 1,
+        "Chisel": 1
+      },
+      "results": {
+        "Opal": 2.5,
+        "Chisel": 1
+      }
+    },
+    {
+      "ingredients": {
+        "Uncut ruby": 1,
+        "Chisel": 1
+      },
+      "results": {
+        "Ruby": 2.5,
+        "Chisel": 1
+      }
+    },
+    {
+      "ingredients": {
         "Bronze hammerhead": 1,
         "Wooden stick": 1
       },
