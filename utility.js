@@ -2,8 +2,12 @@ function upEveryFirstLetter(text) {
     let arr = text.split(" ");
     let ret = "";
     for (let part of arr) {
-        ret += part[0].toUpperCase() + part.slice(1) + " ";
+        if (part[0]!=null) {
+            ret += part[0].toUpperCase() + part.slice(1) + " ";
+        } else {
+            ret += " ";
+        }
+
     }
-    ret.trim();
-    return ret;
+    return ret.slice(0, ret.length-1);
 }
