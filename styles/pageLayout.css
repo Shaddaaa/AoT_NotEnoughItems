@@ -58,6 +58,11 @@ body {
     background: rgb(66, 66, 66);
 }
 
+.menubutton:last-child {
+    border-right-style: solid;
+    border-width: 0.1vw;
+}
+
 #tabContainer {
     display: flex;
     flex-direction: row;

@@ -1,29 +1,33 @@
+/*Purple should never be visible, it's the "error color"*/
+
 * {
     color: white;
 }
 
 html {
-    /*This purple should never be visible*/
     background: purple;
 }
 
 #mainContainer {
-    background: black;
+    background: purple;
 }
 
 #menu {
-    background: rgb(20, 20, 20);
+    background: rgb(0, 0, 0);
+}
+
+.menubutton {
+    color: rgb(0, 255, 255);
 
     border-color: white;
 }
 
 #tabContainer {
-    /*This purple should never be visible*/
     background: purple;
 }
 
 #mainTab {
-    background: black;
+    background: purple;
 }
 
 #itemSearch {
