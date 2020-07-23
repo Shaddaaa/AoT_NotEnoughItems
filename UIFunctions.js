@@ -35,6 +35,11 @@ function switchTab(name) {
     theTab.style.display = "flex";
 }
 
+//function called when updating certain settings
+function recreateActiveRecipeTree() {
+    getRecipeFor(activeRecipeNode.wantedItem.name);
+}
+
 //creates the cheapest recipeNode for the item and displays it
 function getRecipeFor(itemName) {
     let display = document.getElementById("recipeDisplay");
@@ -82,7 +87,8 @@ function setUpItemSearchList() {
     for (let [key, item] of Object.entries(items)) {
         let li = document.createElement("li");
         li.id = "itemLI" + item.name;
-        li.classList.toggle("itemLI");
+        li.classList.toggle("fancyListItem");
+        li.classList.toggle("hoverable");
         li.addEventListener("click", () => {
             getRecipeFor(item.name);
         });
@@ -106,7 +112,7 @@ function setUpItemSearchList() {
         return a.innerHTML.toLowerCase().localeCompare(b.innerHTML.toLowerCase());
     }
 
-    let list = Array.from(document.querySelectorAll("#itemList > .itemLI"));
+    let list = Array.from(document.querySelectorAll("#itemList > .fancyListItem"));
     list.sort(sort_by_name);
     for (var i = 0; i < list.length; i++) {
         list[i].parentNode.appendChild(list[i]);

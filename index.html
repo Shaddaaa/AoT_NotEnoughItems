@@ -15,6 +15,7 @@
   <script src="recipeNode.js"></script>
   <script src="item.js"></script>
   <script src="UIFunctions.js"></script>
+  <script src="settings.js"></script>
   <script src="script.js"></script>
 </head>
 
@@ -30,7 +31,7 @@
     <div id="tabContainer">
       <div id="mainTab">
         <div id="itemSearch">
-          <input id="itemSearchBar" class="txtInput" type="text" onkeyup="getRecipeForInput(event)" name="itemName" placeholder="Search for an item..." autocomplete="off">
+          <input id="itemSearchBar" class="fancyInput" type="text" onkeyup="getRecipeForInput(event)" name="itemName" placeholder="Search for an item..." autocomplete="off">
           <ul id="itemList"></ul>
         </div>
         <div id="recipeTree">
@@ -46,7 +47,20 @@
         </div>
       </div>
       <div id="settingsTab" style="display:none">
-        Settings Coming Soon
+        <div id="settings">
+          <div class="fancyListItem">
+              <span>Start the recipe tree expanded</span>
+              <input type="checkbox" id="settingsExpandTree" onclick="updateSetting('settingsExpandTree')"></input>
+          </div>
+          <div class="fancyListItem">
+              <span>Price of time: </span>
+              <input type="text" id="settingsTimePrice" class="fancyInput" onkeyup="updateSetting('settingsTimePrice')" value=0></input>
+          </div>
+          <div class="fancyListItem">
+              <span>Time per craft: </span>
+              <input type="text" id="settingsTimePerCraft" class="fancyInput" onkeyup="updateSetting('settingsTimePerCraft')" value=0></input>
+          </div>
+        </div>
       </div>
     </div>
   </div>

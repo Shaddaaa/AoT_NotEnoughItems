@@ -72,6 +72,3 @@ let priceData = {
     "Opal": "17000",
     "Ruby": "13000"
 }
-
-//add time as a resource
-priceData["time"] = 0;

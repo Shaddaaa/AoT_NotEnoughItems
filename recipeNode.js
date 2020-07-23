@@ -70,29 +70,38 @@ class RecipeNode {
                 this.childNodes[i].display(ul, false);
             }
             li.appendChild(ul);
+
+            if (settings["settingsExpandTree"]) {
+                span.classList.toggle("caret-down");
+                ul.classList.toggle("active", true);
+            }
+
         } else {
             this.fillInInformation(li);
         }
+
+        
         parentElement.appendChild(li);
     }
     //handles all the neat information given in the displayed recipe tree
     fillInInformation(element) {
         let nameSpan = document.createElement("span");
-        nameSpan.innerHTML = upEveryFirstLetter(this.wantedItem.name) + " x" + Math.round(this.wantedAmount*100)/100;
+        nameSpan.innerHTML = upEveryFirstLetter(this.wantedItem.name) + " x" + this.wantedAmount.toFixed(2);
         element.appendChild(nameSpan);
 
         let priceDiv = document.createElement("div");
-        priceDiv.innerHTML = "&emsp;production cost per: " + this.prodCost;
+        priceDiv.innerHTML = "&emsp;production cost per: " + this.prodCost.toFixed(2);
         priceDiv.classList.toggle("small");
         element.appendChild(priceDiv);
 
         let profitDiv = document.createElement("div");
-        profitDiv.innerHTML = "&emsp;merchant price: " + this.wantedItem.price;
+        profitDiv.innerHTML = "&emsp;merchant price: " + (this.wantedItem.price).toFixed(2);
         profitDiv.classList.toggle("small");
         element.appendChild(profitDiv);
 
         let merchantPriceDiv = document.createElement("div");
-        let increase = this.prodCost!=0 ? Math.round(this.wantedItem.price/this.prodCost*1000)/10-100 : 0;
+        let increase = this.prodCost!=0 ? ((this.wantedItem.price/this.prodCost*100)-100).toFixed(2) : 0;
+        console.log();
         merchantPriceDiv.innerHTML = "&emsp;profit: " + increase + "%";
         merchantPriceDiv.classList.toggle("small");
         element.appendChild(merchantPriceDiv);

@@ -40,11 +40,7 @@ html {
     border-color: white;
 }
 
-#itemSearchBar {
-    background: black;
-}
-
-.itemLI:hover {
+.hoverable:hover {
     cursor: pointer;
     text-decoration: underline;
     background: rgb(66, 66, 66);
@@ -78,7 +74,15 @@ html {
     background: black;
 }
 
+#settings {
+    background: rgb(0, 0, 0);
+}
+
 .btn {
     background: rgb(88, 88, 88);
     border-color: black;
+}
+
+.fancyInput {
+    background: black;
 }
