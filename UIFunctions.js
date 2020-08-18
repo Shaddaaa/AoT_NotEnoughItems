@@ -3,7 +3,7 @@ let activeRecipeNode;
 //function called by form submit
 function getRecipeForInput(event) {
     let input = document.getElementById("itemSearchBar").value.toLowerCase();
-    if (event.key=="Enter") {
+    if (event!=null && event.key=="Enter") {
         let itemList = document.getElementById("itemList").children;
         for (let i = 0; i < itemList.length; i++) {
             if (itemList[i].style.display != "none") {
@@ -16,7 +16,7 @@ function getRecipeForInput(event) {
     }
     for (let [key, item] of Object.entries(items)) {
         if (item.name.indexOf(input)!=-1) {
-            document.getElementById("itemLI" + item.name).style.display = "block";
+            document.getElementById("itemLI" + item.name).style.display = null;
         } else {
             document.getElementById("itemLI" + item.name).style.display = "none";
         }
@@ -37,7 +37,9 @@ function switchTab(name) {
 
 //function called when updating certain settings
 function recreateActiveRecipeTree() {
-    getRecipeFor(activeRecipeNode.wantedItem.name);
+    if (activeRecipeNode!=null) {
+        getRecipeFor(activeRecipeNode.wantedItem.name);
+    }
 }
 
 //creates the cheapest recipeNode for the item and displays it
@@ -88,21 +90,43 @@ function setUpItemSearchList() {
         let li = document.createElement("li");
         li.id = "itemLI" + item.name;
         li.classList.toggle("fancyListItem");
+        li.classList.toggle("flexRow");
         li.classList.toggle("hoverable");
-        li.addEventListener("click", () => {
+
+        let allInfoSpan = document.createElement("span");
+        allInfoSpan.classList.toggle("itemInfoSpan");
+        li.appendChild(allInfoSpan);
+        allInfoSpan.addEventListener("click", () => {
             getRecipeFor(item.name);
         });
 
         let nameSpan = document.createElement("span");
         nameSpan.innerHTML = upEveryFirstLetter(item.name);
-        li.appendChild(nameSpan);
+        allInfoSpan.appendChild(nameSpan);
 
         let infoDiv = document.createElement("div");
         let priceDiv = document.createElement("div");
         priceDiv.classList.toggle("itemPrice");
         priceDiv.innerHTML = "Price: " + item.price;
         infoDiv.appendChild(priceDiv);
-        li.appendChild(infoDiv);
+        allInfoSpan.appendChild(infoDiv);
+
+        let setPriceBox = document.createElement("input");
+        setPriceBox.type = "text";
+        setPriceBox.placeholder = "Set Price";
+        setPriceBox.classList.toggle("fancyInput");
+        setPriceBox.classList.toggle("priceInput");
+        setPriceBox.onkeyup = function(event) {
+            if (event.key!="Enter") {
+                return;
+            }
+            let price = Number.parseInt(this.value);
+            if (!isNaN(price)) {
+                priceData[item.name] = price;
+            }
+            reloadData();
+        }
+        li.appendChild(setPriceBox);
 
         ul.appendChild(li);
     }

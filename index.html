@@ -15,6 +15,7 @@
   <script src="recipeNode.js"></script>
   <script src="item.js"></script>
   <script src="UIFunctions.js"></script>
+  <script src="exImport.js"></script>
   <script src="settings.js"></script>
   <script src="script.js"></script>
 </head>
@@ -25,9 +26,9 @@
 <body onload="onload()">
   <div id="mainContainer">
     <div id="menu">
-        <div id="mbMain" class="menubutton" onclick="switchTab('main')">Main</div>
-        <div id="mbSettings" class="menubutton" onclick="switchTab('settings')">Settings</div>
-      </div>
+      <div id="mbMain" class="menubutton" onclick="switchTab('main')">Main</div>
+      <div id="mbSettings" class="menubutton" onclick="switchTab('settings')">Settings</div>
+    </div>
     <div id="tabContainer">
       <div id="mainTab">
         <div id="itemSearch">
@@ -47,19 +48,20 @@
         </div>
       </div>
       <div id="settingsTab" style="display:none">
-        <div id="settings">
+        <div id="settings" class="column">
           <div class="fancyListItem">
               <span>Start the recipe tree expanded</span>
               <input type="checkbox" id="settingsExpandTree" onclick="updateSetting('settingsExpandTree')"></input>
           </div>
           <div class="fancyListItem">
-              <span>Price of time: </span>
-              <input type="text" id="settingsTimePrice" class="fancyInput" onkeyup="updateSetting('settingsTimePrice')" value=0></input>
-          </div>
-          <div class="fancyListItem">
               <span>Time per craft: </span>
               <input type="text" id="settingsTimePerCraft" class="fancyInput" onkeyup="updateSetting('settingsTimePerCraft')" value=0></input>
           </div>
+        </div>
+        <div id="exImport" class="column">
+          <div class="fancyListItem hoverable flexCol" onclick="exportPriceList()">Export Price Settings</div>
+          <div class="fancyListItem hoverable flexCol" onclick="importPriceList()">Import Price Settings</div>
+          <div class="fancyListItem hoverable flexCol" onclick="resetPriceList()">Reset Price Settings</div>
         </div>
       </div>
     </div>

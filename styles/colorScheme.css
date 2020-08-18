@@ -40,6 +40,15 @@ html {
     border-color: white;
 }
 
+.fancyInput {
+    background: black;
+    border-color: rgb(51, 51, 51);
+}
+
+.priceInput {
+    
+}
+
 .hoverable:hover {
     cursor: pointer;
     text-decoration: underline;
@@ -81,8 +90,4 @@ html {
 .btn {
     background: rgb(88, 88, 88);
     border-color: black;
-}
-
-.fancyInput {
-    background: black;
 }

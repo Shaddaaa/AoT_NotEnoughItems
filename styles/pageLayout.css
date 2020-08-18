@@ -104,8 +104,17 @@ body {
     overflow:auto;
 }
 
+.itemInfoSpan {
+    flex-basis: 70%;
+}
+
 .itemPrice {
     font-size: 0.8vw;
+}
+
+.priceInput {
+    display: inline;
+    max-width: 6vw;
 }
 
 #recipeTree {
@@ -143,7 +152,7 @@ body {
     width: 100%;
 }
 
-#settings {
+.column {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -156,4 +165,12 @@ body {
     border-left-width: 0.1vw;
 
     overflow:auto;
+}
+
+.flexRow {
+    flex-direction: row;
+}
+
+.flexCol {
+    flex-direction: column;
 }

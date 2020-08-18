@@ -15,9 +15,6 @@ function loadSettings() {
     if (settings["settingsExpandTree"]==null) {
         settings["settingsExpandTree"] = true;
     }
-    if (settings["settingsTimePrice"]==null) {
-        settings["settingsTimePrice"] = 0;
-    }
     if (settings["settingsTimePerCraft"]==null) {
         settings["settingsTimePerCraft"] = 1;
     }
@@ -27,9 +24,6 @@ function loadSettings() {
         switch (key) {
             case "settingsExpandTree":
                 element.checked = value;
-                break;
-            case "settingsTimePrice":
-                element.value = value;
                 break;
             case "settingsTimePerCraft":
                 element.value = value;
@@ -46,13 +40,6 @@ function updateSetting(id) {
     switch (id) {
         case "settingsExpandTree":
             newValue = element.checked;
-            break;
-        case "settingsTimePrice":
-            newValue = Number.parseFloat(element.value);
-            if (isNaN(newValue)) {
-                return;
-            }
-            bReloadData = true;
             break;
         case "settingsTimePerCraft":
             newValue = Number.parseFloat(element.value);
