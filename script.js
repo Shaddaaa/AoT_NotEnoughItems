@@ -70,24 +70,8 @@ function reloadData() {
 
 	savePriceList();
 	setUpItemSearchList();
-	getRecipeForInput();
+	handleItemSearchInput();
 	recreateActiveRecipeTree();
-}
-
-function loadPriceData() {
-	let savedData = localStorage.getItem("priceData");
-
-	try {
-		if (savedData==null) {
-			throw "Data is null";
-		}
-		savedData = JSON.parse(savedData);
-	} catch (e) {
-		savedData = {};
-	}
-	for (let [name, price] of Object.entries(savedData)) {
-		priceData[name] = price;
-	}
 }
 
 function onload() {

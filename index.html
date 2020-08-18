@@ -8,15 +8,16 @@
   <link rel="stylesheet" href="styles/treeView.css">
   <link rel="stylesheet" href="styles/resourceBreakDownTable.css">
   <script src="utility.js"></script>
-  <script src="recipeData.js"></script>
-  <script src="priceData.js"></script>
-  <script src="itemStack.js"></script>
-  <script src="recipe.js"></script>
-  <script src="recipeNode.js"></script>
-  <script src="item.js"></script>
+  <script src="defaultData/recipeData.js"></script>
+  <script src="defaultData/priceData.js"></script>
+  <script src="itemLogic/itemStack.js"></script>
+  <script src="itemLogic/item.js"></script>
+  <script src="itemLogic/recipe.js"></script>
+  <script src="treeLogic/recipeNode.js"></script>
+  <script src="treeLogic/treeMethods.js"></script>
+  <script src="rawDataHandling/exImport.js"></script>
+  <script src="settings/settings.js"></script>
   <script src="UIFunctions.js"></script>
-  <script src="exImport.js"></script>
-  <script src="settings.js"></script>
   <script src="script.js"></script>
 </head>
 
@@ -32,7 +33,7 @@
     <div id="tabContainer">
       <div id="mainTab">
         <div id="itemSearch">
-          <input id="itemSearchBar" class="fancyInput" type="text" onkeyup="getRecipeForInput(event)" name="itemName" placeholder="Search for an item..." autocomplete="off">
+          <input id="itemSearchBar" class="fancyInput" type="text" onkeyup="handleItemSearchInput(event)" name="itemName" placeholder="Search for an item..." autocomplete="off">
           <ul id="itemList"></ul>
         </div>
         <div id="recipeTree">

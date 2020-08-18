@@ -7,15 +7,6 @@ function exportPriceList() {
     copyTextToClipboard(data);
 }
 
-function savePriceList() {
-    let data = {};
-    for (let [key, item] of Object.entries(items)) {
-        data[item.name] = item.price;
-    }
-    data = JSON.stringify(data);
-    localStorage.setItem("priceData", data);
-}
-
 function importPriceList() {
     let input = window.prompt("Input a price list!");
     try {
@@ -34,6 +25,31 @@ function importPriceList() {
         }
     }
     reloadData();
+}
+
+function savePriceList() {
+    let data = {};
+    for (let [key, item] of Object.entries(items)) {
+        data[item.name] = item.price;
+    }
+    data = JSON.stringify(data);
+    localStorage.setItem("priceData", data);
+}
+
+function loadPriceData() {
+	let savedData = localStorage.getItem("priceData");
+
+	try {
+		if (savedData==null) {
+			throw "Data is null";
+		}
+		savedData = JSON.parse(savedData);
+	} catch (e) {
+		savedData = {};
+	}
+	for (let [name, price] of Object.entries(savedData)) {
+		priceData[name] = price;
+	}
 }
 
 function resetPriceList() {
