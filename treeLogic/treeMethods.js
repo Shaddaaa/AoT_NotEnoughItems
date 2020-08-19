@@ -14,11 +14,12 @@ function handleItemSearchInput(event) {
         getRecipeFor();
         return;
     }
-    for (let [key, item] of Object.entries(items)) {
-        if (item.name.indexOf(input)!=-1) {
-            document.getElementById("itemLI" + item.name).style.display = null;
+    let itemList = document.getElementById("itemList").children;
+    for (let itemLI of itemList) {
+        if (itemLI.children[0].children[0].innerHTML.toLowerCase().indexOf(input)!=-1) {
+            itemLI.style.display = null;
         } else {
-            document.getElementById("itemLI" + item.name).style.display = "none";
+            itemLI.style.display = "none";
         }
     }
 }
