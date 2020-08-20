@@ -3,21 +3,14 @@ let activeRecipeNode;
 //function called by form submit
 function handleItemSearchInput(event) {
     let input = document.getElementById("itemSearchBar").value.toLowerCase();
-    if (event!=null && event.key=="Enter") {
-        let itemList = document.getElementById("itemList").children;
-        for (let i = 0; i < itemList.length; i++) {
-            if (itemList[i].style.display != "none") {
-                getRecipeFor(itemList[i].children[0].innerHTML.toLowerCase());
-                return;
-            }
-        }
-        getRecipeFor();
-        return;
-    }
     let itemList = document.getElementById("itemList").children;
     for (let itemLI of itemList) {
         if (itemLI.children[0].children[0].innerHTML.toLowerCase().indexOf(input)!=-1) {
             itemLI.style.display = null;
+            if (event!=null && event.key=="Enter") {
+                getRecipeFor(itemLI.children[0].children[0].innerHTML.toLowerCase());
+                return;
+            }
         } else {
             itemLI.style.display = "none";
         }
