@@ -24,7 +24,7 @@ function createResourceBreakdown(recipeNode) {
         tr.appendChild(td1);
 
         let td2 = document.createElement("td");
-        td2.innerHTML = recipeNode.getTotalRequiredItemAmount(resource);
+        td2.innerHTML = recipeNode.getTotalRequiredItemAmount(resource).toFixed(2);
         tr.appendChild(td2);
 
         table.appendChild(tr);
