@@ -16,7 +16,9 @@ function handleItemSearchInput(event) {
             itemLI.style.display = "none";
         }
     }
-    getRecipeFor();
+    if (event!=null && event.key=="Enter") {
+        getRecipeFor();
+    }
 }
 
 //function called when reloading/changing data
