@@ -30,11 +30,11 @@ html {
     background: purple;
 }
 
-#mainTab {
+.tab {
     background: purple;
 }
 
-#itemSearch {
+.searchInput {
     background: rgb(0, 0, 0);
 
     border-color: white;
@@ -43,10 +43,6 @@ html {
 .fancyInput {
     background: black;
     border-color: rgb(51, 51, 51);
-}
-
-.priceInput {
-    
 }
 
 .hoverable:hover {
@@ -75,19 +71,27 @@ html {
     border-color: black;
 }
 
-#recipeList {
-    background: rgb(0, 0, 0);
+#settingsTab {
+    background: purple;
 }
 
-#settingsTab {
+#restSettings {
     background: black;
 }
 
-#settings {
+.column {
     background: rgb(0, 0, 0);
 }
 
 .btn {
     background: rgb(88, 88, 88);
     border-color: black;
+}
+
+#recipeDisplay {
+    background: black;
+}
+
+#recipeOptions {
+    background: black;
 }
