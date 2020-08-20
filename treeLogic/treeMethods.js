@@ -5,10 +5,11 @@ function handleItemSearchInput(event) {
     let input = document.getElementById("itemSearchBar").value.toLowerCase();
     let itemList = document.getElementById("itemList").children;
     for (let itemLI of itemList) {
-        if (itemLI.children[0].children[0].innerHTML.toLowerCase().indexOf(input)!=-1) {
+        let name = itemLI.children[0].children[0].innerHTML.toLowerCase();
+        if (name.indexOf(input)!=-1) {
             itemLI.style.display = null;
             if (event!=null && event.key=="Enter") {
-                getRecipeFor(itemLI.children[0].children[0].innerHTML.toLowerCase());
+                getRecipeFor(name);
                 return;
             }
         } else {
