@@ -1,0 +1,56 @@
+#mainTab {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    width: 100%;
+}
+
+#itemSearch {
+    display: flex;
+    flex-direction: column;
+
+    flex-basis: 20%;
+
+    border-right-style: solid;
+    border-right-width: 0.1vw;
+    border-left-style: solid;
+    border-left-width: 0.1vw;
+
+    overflow:auto;
+}
+
+#itemList {
+    overflow:auto;
+}
+
+.itemInfoSpan {
+    flex-basis: 70%;
+}
+
+.itemPrice {
+    font-size: 0.8vw;
+}
+
+.priceInput {
+    display: inline;
+    max-width: 6vw;
+}
+
+#recipeTree {
+    flex-basis: 65%;
+
+    border-right-style: solid;
+    border-right-width: 0.1vw;
+
+    overflow:auto;
+}
+
+#resourceBreakDown {
+    flex-basis: 15%;
+
+    border-right-style: solid;
+    border-right-width: 0.1vw;
+
+    overflow:auto;
+}

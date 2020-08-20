@@ -1,0 +1,107 @@
+* {
+    overflow: hidden;
+    font-size: 1vw;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+#mainContainer {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+}
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    flex-basis: 6%;
+
+    border-style: solid;
+    border-width: 0.1vw;
+}
+
+.menubutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 100%;
+    padding-left: 1vw;
+    padding-right: 1vw;
+
+    font-size: 2vw;
+
+    border-left-style: solid;
+    border-width: 0.1vw;
+}
+
+.menubutton:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.menubutton:last-child {
+    border-right-style: solid;
+    border-width: 0.1vw;
+}
+
+#tabContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    flex-basis: 94%;
+
+    border-style: solid;
+    border-top-style: none;
+    border-width: 0.1vw;
+}
+
+.header {
+    font-size: 1.3vw;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.small {
+    font-size: 0.8vw;
+}
+
+.fancyListItem {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    text-align: center;
+
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+
+    border-style: solid;
+    border-width: 0.1vw;
+}
+
+.fancyInput {
+    display: block;
+
+    font-size: 1.2vw;
+
+    padding-left: 0.2vw;
+    border-width: 0.05vw;
+    min-height: 2vw;
+}

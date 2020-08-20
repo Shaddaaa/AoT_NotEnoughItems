@@ -2,7 +2,10 @@
 <head>
   <title>Age of Trades - NEI</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="styles/pageLayout.css">
+  <link rel="stylesheet" href="styles/pageLayout/generalLayout.css">
+  <link rel="stylesheet" href="styles/pageLayout/mainLayout.css">
+  <link rel="stylesheet" href="styles/pageLayout/recipesLayout.css">
+  <link rel="stylesheet" href="styles/pageLayout/settingsLayout.css">
   <link rel="stylesheet" href="styles/colorScheme.css">
   <link rel="stylesheet" href="styles/general.css">
   <link rel="stylesheet" href="styles/treeView.css">
@@ -29,6 +32,7 @@
   <div id="mainContainer">
     <div id="menu">
       <div id="mbMain" class="menubutton" onclick="switchTab('main')">Main</div>
+      <div id="mbRecipes" class="menubutton" onclick="switchTab('recipes')">Recipes</div>
       <div id="mbSettings" class="menubutton" onclick="switchTab('settings')">Settings</div>
     </div>
     <div id="tabContainer">
@@ -44,9 +48,17 @@
         <div id="resourceBreakDown">
           <div class="header">Resource Breakdown:</div>
         </div>
-        <div id="recipeList">
-          <div class="header">Recipe List:</div>
-          Coming Soon
+      </div>
+      <div id="recipesTab" style="display:none">
+        <div id="recipeSearch">
+          <input id="recipeSearchBar" class="fancyInput" type="text" onkeyup="handleRecipeSearchInput(event)" name="recipeName" placeholder="Search for a recipe..." autocomplete="off">
+          <ul id="recipeList"></ul>
+        </div>
+        <div id="recipeDisplay">
+          <div class="header">Recipe:</div>
+        </div>
+        <div id="recipeOptions">
+          <div class="header">Options:</div>
         </div>
       </div>
       <div id="settingsTab" style="display:none">

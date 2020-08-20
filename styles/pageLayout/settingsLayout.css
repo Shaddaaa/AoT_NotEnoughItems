@@ -1,0 +1,30 @@
+#settingsTab {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    flex-basis: 15%;
+
+    border-right-style: solid;
+    border-right-width: 0.1vw;
+    border-left-style: solid;
+    border-left-width: 0.1vw;
+
+    overflow:auto;
+}
+
+.flexRow {
+    flex-direction: row;
+}
+
+.flexCol {
+    flex-direction: column;
+}
