@@ -101,7 +101,6 @@ class RecipeNode {
 
         let merchantPriceDiv = document.createElement("div");
         let increase = this.prodCost!=0 ? ((this.wantedItem.price/this.prodCost*100)-100).toFixed(2) : 0;
-        console.log();
         merchantPriceDiv.innerHTML = "&emsp;profit: " + increase + "%";
         merchantPriceDiv.classList.toggle("small");
         element.appendChild(merchantPriceDiv);

@@ -15,18 +15,12 @@ function loadSettings() {
     if (settings["settingsExpandTree"]==null) {
         settings["settingsExpandTree"] = true;
     }
-    if (settings["settingsTimePerCraft"]==null) {
-        settings["settingsTimePerCraft"] = 1;
-    }
 
     for (let [key,value] of Object.entries(settings)) {
         let element = document.getElementById(key);
         switch (key) {
             case "settingsExpandTree":
                 element.checked = value;
-                break;
-            case "settingsTimePerCraft":
-                element.value = value;
                 break;
         }
     }
@@ -40,13 +34,6 @@ function updateSetting(id) {
     switch (id) {
         case "settingsExpandTree":
             newValue = element.checked;
-            break;
-        case "settingsTimePerCraft":
-            newValue = Number.parseFloat(element.value);
-            if (isNaN(newValue) || newValue < 0) {
-                return;
-            }
-            bReloadData = true;
             break;
     }
     settings[id] = newValue;

@@ -3,7 +3,8 @@ class ItemStack {
 		this.item = item;
 		this.size = size;
     }
-    clone(mult = 1) {
-        return new ItemStack(this.item, this.size*mult);
-    }
+}
+
+function cloneItemStack(itemStack, mult = 1) {
+    return new ItemStack(itemStack.item, itemStack.size*mult);
 }

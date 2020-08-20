@@ -11,7 +11,7 @@ function reloadData() {
 
 	
 	//add time as a resource
-	priceData["time"] = settings["settingsTimePrice"];
+	priceData["time"] = 0;
 
 	//create item objects
 	for (let [name, price] of Object.entries(priceData)) {
@@ -19,10 +19,9 @@ function reloadData() {
 		items[name] = new Item(name, Number.parseFloat(price));
 	}
 
-	//merge all recipeDatas into one object and add appropriate time requirements
+	//merge all recipeDatas into one object
 	let recipeData = [];
 	for (let craftingRecipeInput of craftingRecipeData) {
-		craftingRecipeInput.ingredients["time"] = settings["settingsTimePerCraft"];
 		recipeData.push(craftingRecipeInput);
 	}
 
@@ -56,7 +55,7 @@ function reloadData() {
 				resultStacks.push(new ItemStack(items[resultName], amount));
 			}
 		}
-		recipes.push(new Recipe(ingredientStacks, resultStacks));
+		recipes.push(new Recipe(ingredientStacks, resultStacks, recipeInput.chance));
 	}
 
 	//add recipes to item objects
@@ -69,6 +68,7 @@ function reloadData() {
 	}
 
 	savePriceList();
+	saveRecipeList();
 	setUpItemSearchList();
 	handleItemSearchInput();
 	recreateActiveRecipeTree();
@@ -77,5 +77,6 @@ function reloadData() {
 function onload() {
 	loadSettings();
 	loadPriceData();
+	loadRecipeData();
 	reloadData();
 }

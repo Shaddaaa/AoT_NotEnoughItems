@@ -23,7 +23,7 @@ class Item {
 			if (stack.item==this) {
                 normalizingFactor = 1/stack.size;
 			} else {
-				remains.push(stack.clone());
+				remains.push(cloneItemStack(stack));
 			}
         }
 
