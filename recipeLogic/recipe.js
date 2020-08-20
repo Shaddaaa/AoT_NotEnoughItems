@@ -1,6 +1,7 @@
 class Recipe {
-	constructor(ingredientStacks, resultStacks, successChance, id) {
+	constructor(ingredientStacks, toolStacks, resultStacks, successChance, id) {
         this.ingredientStacks = ingredientStacks;
+        this.toolStacks = toolStacks;
         this.resultStacks = resultStacks;
         this.successChance = successChance;
         this.id = id;
@@ -8,6 +9,14 @@ class Recipe {
     getIngredientIndexOf(itemName) {
         for (let i = 0; i < this.ingredientStacks.length; i++) {
             if (this.ingredientStacks[i].item.name==itemName) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    getToolIndexOf(itemName) {
+        for (let i = 0; i < this.toolStacks.length; i++) {
+            if (this.toolStacks[i].item.name==itemName) {
                 return i;
             }
         }

@@ -7,7 +7,8 @@ class RecipeNode {
         this.recipe = recipe;
         this.wantedItem = wantedItem;
         this.prodCost = prodCost;
-        this.childNodes = [];
+        this.ingredientChildNodes = [];
+        this.toolChildNodes = [];
         this.wantedAmount = 0;
     }
     //returns a list of all base resources, recursively
@@ -16,7 +17,14 @@ class RecipeNode {
             return [this.wantedItem.name];
         }
         let itemNames = [];
-        for (let childNode of this.childNodes) {
+        for (let childNode of this.ingredientChildNodes) {
+            for (let itemName of childNode.getAllBaseResourceNames()) {
+                if (!itemNames.includes(itemName)) {
+                    itemNames.push(itemName);
+                }
+            }
+        }
+        for (let childNode of this.toolChildNodes) {
             for (let itemName of childNode.getAllBaseResourceNames()) {
                 if (!itemNames.includes(itemName)) {
                     itemNames.push(itemName);
@@ -31,7 +39,10 @@ class RecipeNode {
             return this.wantedItem.name == itemname ? this.wantedAmount : 0;
         }
         let total = 0;
-        for (let childNode of this.childNodes) {
+        for (let childNode of this.ingredientChildNodes) {
+            total += childNode.getTotalRequiredItemAmount(itemname);
+        }
+        for (let childNode of this.toolChildNodes) {
             total += childNode.getTotalRequiredItemAmount(itemname);
         }
         return total;
@@ -39,22 +50,34 @@ class RecipeNode {
     //sets this.wantedAmount and recursively updates childNodes
     updateWantedAmount(newWantedAmount) {
         this.wantedAmount = newWantedAmount;
-        for (let i = 0; i < this.childNodes.length; i++) {
-            this.childNodes[i].updateWantedAmount(this.getWantedAmountForChildNode(i));
+        for (let i = 0; i < this.ingredientChildNodes.length; i++) {
+            this.ingredientChildNodes[i].updateWantedAmount(this.getWantedAmountForIngredientChildNode(i));
+        }
+        for (let i = 0; i < this.toolChildNodes.length; i++) {
+            this.toolChildNodes[i].updateWantedAmount(this.getWantedAmountForToolChildNode(i));
         }
     }
     //returns the new wantedAmount for this.childNodes[index] based on this.wantedAmount
-    getWantedAmountForChildNode(index) {
+    getWantedAmountForIngredientChildNode(index) {
         let wantedIndex = this.recipe.getResultIndexOf(this.wantedItem.name);
-        let made = this.recipe.resultStacks[wantedIndex].size;
-        let neededIndex = this.recipe.getIngredientIndexOf(this.childNodes[index].wantedItem.name);
+        let made = this.recipe.resultStacks[wantedIndex].size*this.recipe.successChance;
+        let neededIndex = this.recipe.getIngredientIndexOf(this.ingredientChildNodes[index].wantedItem.name);
         let needed = this.recipe.ingredientStacks[neededIndex].size;
         return needed/made*this.wantedAmount;
     }
+
+    getWantedAmountForToolChildNode(index) {
+        let wantedIndex = this.recipe.getResultIndexOf(this.wantedItem.name);
+        let made = this.recipe.resultStacks[wantedIndex].size*this.recipe.successChance;
+        let neededIndex = this.recipe.getToolIndexOf(this.toolChildNodes[index].wantedItem.name);
+        let needed = this.recipe.toolStacks[neededIndex].size;
+        return needed/made*this.wantedAmount;
+    }
+
     //adds itself and through recursion all childNodes to the parentElement as a tree
     display(parentElement, firstLayer = true) {
         let li = document.createElement("li");
-        if (this.childNodes.length>0) {
+        if ((this.ingredientChildNodes.length+this.toolChildNodes.length)>0) {
             let span = document.createElement("span");
             span.classList.toggle("caret");
             span.addEventListener("click", function() {
@@ -66,8 +89,11 @@ class RecipeNode {
             
             let ul = document.createElement("ul");
             ul.classList.toggle("nested");
-            for (let i = 0; i < this.childNodes.length; i++) {
-                this.childNodes[i].display(ul, false);
+            for (let i = 0; i < this.ingredientChildNodes.length; i++) {
+                this.ingredientChildNodes[i].display(ul, false);
+            }
+            for (let i = 0; i < this.toolChildNodes.length; i++) {
+                this.toolChildNodes[i].display(ul, false);
             }
             li.appendChild(ul);
 

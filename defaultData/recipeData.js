@@ -1,174 +1,192 @@
-//an array, each element contains one recipe object that looks like this: {ingredients, results, successChance}, 
+//an object with id:recipe pairs
+//each recipe looks like this: {id, ingredients, results, successChance}, 
 //ingredient and results each are objects containing: name:count pairs
-let craftingRecipeData = [
-    {
+//id and successChance each are simply one name:count pair
+let craftingRecipeData = {
+    0: {
       "ingredients": {
         "Wooden stick": 1,
+      },
+      "tools": {
         "Chisel": 1
       },
       "results": {
-        "Arrow shaft": 2.5,
-        "Chisel": 1
-      },
-      "successChance":0.7
+        "Arrow shaft": 3,
+      }
     },
-    {
+    1: {
       "ingredients": {
         "Uncut opal": 1,
+      },
+      "tools": {
         "Chisel": 1
       },
       "results": {
         "Opal": 1,
-        "Chisel": 1
-      },
-      "successChance":0.7
+      }
     },
-    {
+    2: {
       "ingredients": {
         "Uncut ruby": 1,
+      },
+      "tools": {
         "Chisel": 1
       },
       "results": {
         "Ruby": 1,
-        "Chisel": 1
-      },
-      "successChance":0.7
+      }
     },
-    {
+    3: {
       "ingredients": {
         "Bronze hammerhead": 1,
         "Wooden stick": 1
       },
+      "tools": {
+        
+      },
       "results": {
         "Bronze hammer": 1
-      },
-      "successChance":0.7
+      }
     },
-    {
+    4: {
       "ingredients": {
         "Uncut emerald": 1,
+        "Chisel": 1
+      },
+      "tools": {
         "Chisel": 1
       },
       "results": {
         "Emerald": 1,
         "Chisel": 1
-      },
-      "successChance":0.7
+      }
     },
-    {
+    5: {
       "ingredients": {
         "Twig": 1,
         "Thread": 1,
         "Fishing hook": 1
       },
+      "tools": {
+
+      },
       "results": {
         "Fishing rod": 1
-      },
-      "successChance":0.7
+      }
     },
-    {
+    6: {
       "ingredients": {
         "Flint spearhead": 1,
+      },
+      "tools": {
         "Flint": 1
       },
       "results": {
         "Flint arrowhead": 3,
-        "Flint": 1
-      },
-      "successChance":0.7
+      }
     },
-    {
+    7: {
       "ingredients": {
         "Sharp flint": 1,
         "Wooden stick": 1
       },
-      "results": {
-        "Flint hatchet": 1
+      "tools": {
+
       },
-      "successChance":0.7
+      "results": {
+        "Flint hatchet": 3
+      }
     },
-    {
+    8: {
       "ingredients": {
         "Flint spearhead": 1,
         "Wooden stick": 1
       },
-      "results": {
-        "Flint spear": 1
+      "tools": {
+
       },
-      "successChance":0.7
+      "results": {
+        "Flint spear": 3
+      }
     },
-    {
+    9: {
       "ingredients": {
         "Sharp flint": 1,
-        "Flint": 1
+      },
+      "tools": {
+        "Chisel": 1
       },
       "results": {
-        "Flint spearhead": 1,
-        "Flint": 1
-      },
-      "successChance":0.7
+        "Flint spearhead": 3,
+      }
     },
-    {
+    10: {
       "ingredients": {
         "Uncut sapphire": 1,
+      },
+      "tools": {
         "Chisel": 1
       },
       "results": {
         "Sapphire": 1,
-        "Chisel": 1
-      },
-      "successChance":0.7
+      }
     },
-    {
+    11: {
       "ingredients": {
-        "Flint": 2
+        "Flint": 1
+      },
+      "tools": {
+        "Chisel": 1
       },
       "results": {
         "Sharp flint": 1
-      },
-      "successChance":0.7
+      }
     },
-    {
+    12: {
       "ingredients": {
         "Wooden stick": 1,
         "Thread": 1,
         "Fishing hook": 1
       },
+      "tools": {
+
+      },
       "results": {
         "Strong fishing rod": 1
-      },
-      "successChance":0.7
+      }
     },
-    {
+    13: {
       "ingredients": {
         "Twig": 1,
+      },
+      "tools": {
         "Chisel": 1
       },
       "results": {
         "Tinder": 1,
-        "Chisel": 1
-      },
-      "successChance":0.7
+      }
     },
-    {
+    14: {
       "ingredients": {
         "Twig": 1,
         "Thread": 1
       },
+      "tools": {
+
+      },
       "results": {
         "Weak bow": 1
-      },
-      "successChance":0.7
+      }
     },
-    {
+    15: {
       "ingredients": {
-        "Chisel": 1,
         "Log": 1
+      },
+      "tools": {
+        "Chisel": 1
       },
       "results": {
         "Wooden stick": 1,
-        "Chisel": 1
-      },
-      "successChance":0.7
+      }
     }
-];
+};

@@ -9,7 +9,6 @@ function reloadData() {
 	items = {};
 	recipes = [];
 
-	
 	//add time as a resource
 	priceData["time"] = 0;
 
@@ -20,18 +19,23 @@ function reloadData() {
 	}
 
 	//merge all recipeDatas into one object
-	let recipeData = [];
-	for (let craftingRecipeInput of craftingRecipeData) {
-		recipeData.push(craftingRecipeInput);
+	let recipeData = {};
+	for (let [id, craftingRecipeInput] of Object.entries(craftingRecipeData)) {
+		recipeData[id] = craftingRecipeInput;
 	}
 
 	//create recipe objects
-	for (let recipeInput of recipeData) {
+	for (let [id, recipeInput] of Object.entries(recipeData)) {
 		let ingredientStacks = [];
+		let toolStacks = [];
 		let resultStacks = [];
 		for (let [ingredientName, amount] of Object.entries(recipeInput.ingredients)) {
 			ingredientName = ingredientName.toLowerCase();
 			ingredientStacks.push(new ItemStack(items[ingredientName], amount));
+		}
+		for (let [toolName, amount] of Object.entries(recipeInput.tools)) {
+			toolName = toolName.toLowerCase();
+			toolStacks.push(new ItemStack(items[toolName], amount));
 		}
 		for (let [resultName, amount] of Object.entries(recipeInput.results)) {
 			resultName = resultName.toLowerCase();
@@ -55,7 +59,7 @@ function reloadData() {
 				resultStacks.push(new ItemStack(items[resultName], amount));
 			}
 		}
-		recipes.push(new Recipe(ingredientStacks, resultStacks, recipeInput.successChance, recipes.length));
+		recipes.push(new Recipe(ingredientStacks, toolStacks, resultStacks, recipeSuccessChances[id], id));
 	}
 
 	//add recipes to item objects
@@ -68,7 +72,7 @@ function reloadData() {
 	}
 
 	savePriceList();
-	saveRecipeList();
+	saveRecipeSuccessChances();
 	setUpItemSearchList();
 	setUpRecipeSearchList();
 	handleItemSearchInput();
@@ -78,6 +82,6 @@ function reloadData() {
 function onload() {
 	loadSettings();
 	loadPriceData();
-	loadRecipeData();
+	loadRecipeSuccessChances();
 	reloadData();
 }

@@ -13,6 +13,7 @@
   <script src="utility.js"></script>
   <script src="defaultData/recipeData.js"></script>
   <script src="defaultData/priceData.js"></script>
+  <script src="defaultData/recipeSuccessChances.js"></script>
   <script src="itemLogic/itemStack.js"></script>
   <script src="itemLogic/item.js"></script>
   <script src="recipeLogic/recipe.js"></script>
@@ -20,7 +21,7 @@
   <script src="treeLogic/recipeNode.js"></script>
   <script src="treeLogic/treeMethods.js"></script>
   <script src="rawDataHandling/exImRawPriceData.js"></script>
-  <script src="rawDataHandling/exImRawRecipeData.js"></script>
+  <script src="rawDataHandling/exImRecipeSuccessChance.js"></script>
   <script src="settings/settings.js"></script>
   <script src="UIFunctions.js"></script>
   <script src="script.js"></script>
@@ -68,9 +69,9 @@
           <div class="fancyListItem hoverable flexCol" onclick="importPriceList()">Import Price Settings</div>
           <div class="fancyListItem hoverable flexCol" onclick="resetPriceList()">Reset Price Settings</div>
           <div class="fancyListItem"></div>
-          <div class="fancyListItem hoverable flexCol" onclick="exportRecipeList()">Export Recipe Settings</div>
-          <div class="fancyListItem hoverable flexCol" onclick="importRecipeList()">Import Recipe Settings</div>
-          <div class="fancyListItem hoverable flexCol" onclick="resetRecipeList()">Reset Recipe Settings</div>
+          <div class="fancyListItem hoverable flexCol" onclick="exportRecipeSuccessChances()">Export Recipe Success Chances</div>
+          <div class="fancyListItem hoverable flexCol" onclick="importRecipeSuccessChances()">Import Recipe Success Chances</div>
+          <div class="fancyListItem hoverable flexCol" onclick="resetRecipeSuccessChances()">Reset Recipe Success Chances</div>
         </div>
         <div id="settings" class="column">
           <div class="fancyListItem">

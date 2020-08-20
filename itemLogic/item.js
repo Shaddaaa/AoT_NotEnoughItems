@@ -27,16 +27,26 @@ class Item {
 			}
         }
 
-        let childNodes = [];
+        //loop through all ingredients and tools needed and look for their cheapest recipe tree
+        let ingredientChildNodes = [];
 		for (let ingredientStack of recipe.ingredientStacks) {
             let ingredientRecipeNode = ingredientStack.item.getCheapestRecipeTree();
-            let prodCost = ingredientRecipeNode.prodCost*ingredientStack.size*normalizingFactor;
-            childNodes.push(ingredientRecipeNode);
+            let prodCost = ingredientRecipeNode.prodCost*ingredientStack.size*normalizingFactor/this.recipes[recipeIndex].successChance;
+            ingredientChildNodes.push(ingredientRecipeNode);
+            prodPrice += prodCost;
+        }
+
+        let toolChildNodes = [];
+        for (let toolStack of recipe.toolStacks) {
+            let toolRecipeNode = toolStack.item.getCheapestRecipeTree();
+            let prodCost = toolRecipeNode.prodCost*toolStack.size*normalizingFactor/this.recipes[recipeIndex].successChance;
+            toolChildNodes.push(toolRecipeNode);
             prodPrice += prodCost;
         }
 
         let recipeNode = new RecipeNode(recipe, this, prodPrice);
-        recipeNode.childNodes = childNodes;
+        recipeNode.ingredientChildNodes = ingredientChildNodes;
+        recipeNode.toolChildNodes = toolChildNodes;
         return recipeNode;
     }
 

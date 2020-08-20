@@ -33,9 +33,14 @@ function displayRecipe(recipeID) {
             display.innerHTML += ingredientStack.size.toFixed(2) + "x " + ingredientStack.item.name + ", ";
         }
 
+        display.innerHTML += "<br>Tools: ";
+        for (let toolStack of recipe.toolStacks) {
+            display.innerHTML += toolStack.size.toFixed(2) + "x " + toolStack.item.name + ", ";
+        }
+
         display.innerHTML += "<br>Results: ";
         for (let resultStack of recipe.resultStacks) {
-            display.innerHTML += (resultStack.size*recipe.successChance).toFixed(2) + "x " + resultStack.item.name + ", ";
+            display.innerHTML += resultStack.size.toFixed(2) + "x " + resultStack.item.name + ", ";
         }
 
     } else {
