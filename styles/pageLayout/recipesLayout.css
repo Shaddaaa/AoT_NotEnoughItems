@@ -1,0 +1,17 @@
+#recipeDisplay {
+    flex-basis: 50%;
+
+    border-right-style: solid;
+    border-right-width: 0.1vw;
+
+    overflow:auto;
+}
+
+#recipeOptions {
+    flex-basis: 30%;
+
+    border-right-style: solid;
+    border-right-width: 0.1vw;
+
+    overflow:auto;
+}

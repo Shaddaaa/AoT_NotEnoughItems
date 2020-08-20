@@ -15,7 +15,8 @@
   <script src="defaultData/priceData.js"></script>
   <script src="itemLogic/itemStack.js"></script>
   <script src="itemLogic/item.js"></script>
-  <script src="itemLogic/recipe.js"></script>
+  <script src="recipeLogic/recipe.js"></script>
+  <script src="recipeLogic/recipeSearchList.js"></script>
   <script src="treeLogic/recipeNode.js"></script>
   <script src="treeLogic/treeMethods.js"></script>
   <script src="rawDataHandling/exImRawPriceData.js"></script>
@@ -36,23 +37,23 @@
       <div id="mbSettings" class="menubutton" onclick="switchTab('settings')">Settings</div>
     </div>
     <div id="tabContainer">
-      <div id="mainTab">
-        <div id="itemSearch">
+      <div id="mainTab" class="tab">
+        <div id="itemSearch" class="searchInput">
           <input id="itemSearchBar" class="fancyInput" type="text" onkeyup="handleItemSearchInput(event)" name="itemName" placeholder="Search for an item..." autocomplete="off">
-          <ul id="itemList"></ul>
+          <ul id="itemList" class="searchList"></ul>
         </div>
         <div id="recipeTree">
           <div class="header">Recipe Tree:</div>
-          <ul id="recipeDisplay" class="trimmed"></ul>
+          <ul id="recipeTreeDisplay" class="trimmed"></ul>
         </div>
         <div id="resourceBreakDown">
           <div class="header">Resource Breakdown:</div>
         </div>
       </div>
-      <div id="recipesTab" style="display:none">
-        <div id="recipeSearch">
+      <div id="recipesTab" class="tab" style="display:none">
+        <div id="recipeSearch" class="searchInput">
           <input id="recipeSearchBar" class="fancyInput" type="text" onkeyup="handleRecipeSearchInput(event)" name="recipeName" placeholder="Search for a recipe..." autocomplete="off">
-          <ul id="recipeList"></ul>
+          <ul id="recipeList" class="searchList"></ul>
         </div>
         <div id="recipeDisplay">
           <div class="header">Recipe:</div>
@@ -61,7 +62,7 @@
           <div class="header">Options:</div>
         </div>
       </div>
-      <div id="settingsTab" style="display:none">
+      <div id="settingsTab" class="tab" style="display:none">
         <div id="exImport" class="column">
           <div class="fancyListItem hoverable flexCol" onclick="exportPriceList()">Export Price Settings</div>
           <div class="fancyListItem hoverable flexCol" onclick="importPriceList()">Import Price Settings</div>
@@ -81,6 +82,7 @@
               <input type="text" id="settingsTimePerCraft" class="fancyInput" onkeyup="updateSetting('settingsTimePerCraft')" value=0></input>
           </div>
         </div>
+        <div id="restSettings"></div>
       </div>
     </div>
   </div>

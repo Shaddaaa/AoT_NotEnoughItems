@@ -55,7 +55,7 @@ function reloadData() {
 				resultStacks.push(new ItemStack(items[resultName], amount));
 			}
 		}
-		recipes.push(new Recipe(ingredientStacks, resultStacks, recipeInput.chance));
+		recipes.push(new Recipe(ingredientStacks, resultStacks, recipeInput.successChance, recipes.length));
 	}
 
 	//add recipes to item objects
@@ -70,6 +70,7 @@ function reloadData() {
 	savePriceList();
 	saveRecipeList();
 	setUpItemSearchList();
+	setUpRecipeSearchList();
 	handleItemSearchInput();
 	recreateActiveRecipeTree();
 }

@@ -1,4 +1,4 @@
-//an array, each element contains one recipe object that looks like this: {ingredients, results, chance}, 
+//an array, each element contains one recipe object that looks like this: {ingredients, results, successChance}, 
 //ingredient and results each are objects containing: name:count pairs
 let craftingRecipeData = [
     {
@@ -10,7 +10,7 @@ let craftingRecipeData = [
         "Arrow shaft": 2.5,
         "Chisel": 1
       },
-      "chance":0.7
+      "successChance":0.7
     },
     {
       "ingredients": {
@@ -21,7 +21,7 @@ let craftingRecipeData = [
         "Opal": 1,
         "Chisel": 1
       },
-      "chance":0.7
+      "successChance":0.7
     },
     {
       "ingredients": {
@@ -32,7 +32,7 @@ let craftingRecipeData = [
         "Ruby": 1,
         "Chisel": 1
       },
-      "chance":0.7
+      "successChance":0.7
     },
     {
       "ingredients": {
@@ -42,7 +42,7 @@ let craftingRecipeData = [
       "results": {
         "Bronze hammer": 1
       },
-      "chance":0.7
+      "successChance":0.7
     },
     {
       "ingredients": {
@@ -53,7 +53,7 @@ let craftingRecipeData = [
         "Emerald": 1,
         "Chisel": 1
       },
-      "chance":0.7
+      "successChance":0.7
     },
     {
       "ingredients": {
@@ -64,7 +64,7 @@ let craftingRecipeData = [
       "results": {
         "Fishing rod": 1
       },
-      "chance":0.7
+      "successChance":0.7
     },
     {
       "ingredients": {
@@ -75,7 +75,7 @@ let craftingRecipeData = [
         "Flint arrowhead": 3,
         "Flint": 1
       },
-      "chance":0.7
+      "successChance":0.7
     },
     {
       "ingredients": {
@@ -85,7 +85,7 @@ let craftingRecipeData = [
       "results": {
         "Flint hatchet": 1
       },
-      "chance":0.7
+      "successChance":0.7
     },
     {
       "ingredients": {
@@ -95,7 +95,7 @@ let craftingRecipeData = [
       "results": {
         "Flint spear": 1
       },
-      "chance":0.7
+      "successChance":0.7
     },
     {
       "ingredients": {
@@ -106,7 +106,7 @@ let craftingRecipeData = [
         "Flint spearhead": 1,
         "Flint": 1
       },
-      "chance":0.7
+      "successChance":0.7
     },
     {
       "ingredients": {
@@ -117,7 +117,7 @@ let craftingRecipeData = [
         "Sapphire": 1,
         "Chisel": 1
       },
-      "chance":0.7
+      "successChance":0.7
     },
     {
       "ingredients": {
@@ -126,7 +126,7 @@ let craftingRecipeData = [
       "results": {
         "Sharp flint": 1
       },
-      "chance":0.7
+      "successChance":0.7
     },
     {
       "ingredients": {
@@ -137,7 +137,7 @@ let craftingRecipeData = [
       "results": {
         "Strong fishing rod": 1
       },
-      "chance":0.7
+      "successChance":0.7
     },
     {
       "ingredients": {
@@ -148,7 +148,7 @@ let craftingRecipeData = [
         "Tinder": 1,
         "Chisel": 1
       },
-      "chance":0.7
+      "successChance":0.7
     },
     {
       "ingredients": {
@@ -158,7 +158,7 @@ let craftingRecipeData = [
       "results": {
         "Weak bow": 1
       },
-      "chance":0.7
+      "successChance":0.7
     },
     {
       "ingredients": {
@@ -169,6 +169,6 @@ let craftingRecipeData = [
         "Wooden stick": 1,
         "Chisel": 1
       },
-      "chance":0.7
+      "successChance":0.7
     }
 ];

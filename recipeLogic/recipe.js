@@ -1,8 +1,9 @@
 class Recipe {
-	constructor(ingredientStacks, resultStacks, chance) {
+	constructor(ingredientStacks, resultStacks, successChance, id) {
         this.ingredientStacks = ingredientStacks;
         this.resultStacks = resultStacks;
-        this.successChance = chance;
+        this.successChance = successChance;
+        this.id = id;
     }
     getIngredientIndexOf(itemName) {
         for (let i = 0; i < this.ingredientStacks.length; i++) {

@@ -91,3 +91,36 @@ function setUpItemSearchList() {
         list[i].parentNode.appendChild(list[i]);
     }
 }
+
+function setUpRecipeSearchList() {
+    let ul = document.getElementById("recipeList");
+    ul.innerHTML = "";
+    for (let recipe of recipes) {
+        let li = document.createElement("li");
+        li.id = "recipeLI" + recipe.resultStacks[0].item.name;
+        li.setAttribute("data-recipeid", recipe.id);
+        li.classList.toggle("fancyListItem");
+        li.classList.toggle("flexRow");
+        li.classList.toggle("hoverable");
+        li.addEventListener("click", () => {
+            displayRecipe(recipe.id);
+        });
+
+        let nameSpan = document.createElement("span");
+        nameSpan.innerHTML = upEveryFirstLetter(recipe.resultStacks[0].item.name);
+        li.appendChild(nameSpan);
+
+        ul.appendChild(li);
+    }
+
+    //sort the item list
+    let sort_by_name = function(a, b) {
+        return a.innerHTML.toLowerCase().localeCompare(b.innerHTML.toLowerCase());
+    }
+
+    let list = Array.from(document.querySelectorAll("#recipeList > .fancyListItem"));
+    list.sort(sort_by_name);
+    for (var i = 0; i < list.length; i++) {
+        list[i].parentNode.appendChild(list[i]);
+    }
+}

@@ -4,7 +4,7 @@ function getRawRecipeData() {
         recipeData = {};
         recipeData.ingredients = {};
         recipeData.results = {};
-        recipeData.chance = recipe.chance;
+        recipeData.successChance = recipe.successChance;
 
         for (let ingredientStack of recipe.ingredientStacks) {
             recipeData.ingredients[ingredientStack.item.name] = ingredientStack.size;

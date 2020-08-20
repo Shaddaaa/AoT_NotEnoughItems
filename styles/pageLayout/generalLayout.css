@@ -72,6 +72,14 @@ body {
     border-width: 0.1vw;
 }
 
+.tab {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    width: 100%;
+}
+
 .header {
     font-size: 1.3vw;
     text-decoration: underline;
@@ -80,6 +88,24 @@ body {
 
 .small {
     font-size: 0.8vw;
+}
+
+.searchInput {
+    display: flex;
+    flex-direction: column;
+
+    flex-basis: 20%;
+
+    border-right-style: solid;
+    border-right-width: 0.1vw;
+    border-left-style: solid;
+    border-left-width: 0.1vw;
+
+    overflow:auto;
+}
+
+.searchList {
+    overflow:auto;
 }
 
 .fancyListItem {

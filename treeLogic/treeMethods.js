@@ -30,7 +30,7 @@ function recreateActiveRecipeTree() {
 
 //creates the cheapest recipeNode for the item and displays it
 function getRecipeFor(itemName) {
-    let display = document.getElementById("recipeDisplay");
+    let display = document.getElementById("recipeTreeDisplay");
 
     if (items[itemName]!=null) {
         let resourceBreakDown = document.getElementById("resourceBreakDown");

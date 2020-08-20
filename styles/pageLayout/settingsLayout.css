@@ -1,11 +1,3 @@
-#settingsTab {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-
-    width: 100%;
-}
-
 .column {
     display: flex;
     flex-direction: column;
@@ -27,4 +19,8 @@
 
 .flexCol {
     flex-direction: column;
+}
+
+#restSettings {
+    flex-basis: 70%;
 }
