@@ -70,7 +70,7 @@ class RecipeNode {
         let wantedIndex = this.recipe.getResultIndexOf(this.wantedItem.name);
         let made = this.recipe.resultStacks[wantedIndex].size*this.recipe.successChance;
         let neededIndex = this.recipe.getToolIndexOf(this.toolChildNodes[index].wantedItem.name);
-        let needed = this.recipe.toolStacks[neededIndex].size;
+        let needed = (1-this.recipe.successChance)*this.recipe.toolStacks[neededIndex].size;
         return needed/made*this.wantedAmount;
     }
 

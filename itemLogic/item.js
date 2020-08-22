@@ -39,7 +39,7 @@ class Item {
         let toolChildNodes = [];
         for (let toolStack of recipe.toolStacks) {
             let toolRecipeNode = toolStack.item.getCheapestRecipeTree();
-            let prodCost = toolRecipeNode.prodCost*toolStack.size*normalizingFactor/this.recipes[recipeIndex].successChance;
+            let prodCost = toolRecipeNode.prodCost*normalizingFactor*(1-this.recipes[recipeIndex].successChance);
             toolChildNodes.push(toolRecipeNode);
             prodPrice += prodCost;
         }
