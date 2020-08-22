@@ -81,6 +81,8 @@ function reloadData() {
 }
 
 function onload() {
+	createDefaultSuccessChances();
+
 	loadSettings();
 	loadPriceData();
 	loadRecipeSuccessChances();
