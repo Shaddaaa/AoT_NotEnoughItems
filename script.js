@@ -7,7 +7,7 @@ let recipes;
 //parses the raw data into item and recipe objects
 function reloadData() {
 	items = {};
-	recipes = [];
+	recipes = {};
 
 	//add time as a resource
 	priceData["time"] = 0;
@@ -59,12 +59,12 @@ function reloadData() {
 				resultStacks.push(new ItemStack(items[resultName], amount));
 			}
 		}
-		recipes.push(new Recipe(ingredientStacks, toolStacks, resultStacks, recipeSuccessChances[id], id));
+		recipes[id] = new Recipe(ingredientStacks, toolStacks, resultStacks, recipeSuccessChances[id], id);
 	}
 
 	//add recipes to item objects
 	for (let [name, item] of Object.entries(items)) {
-		for (let recipe of recipes) {
+		for (let [id, recipe] of Object.entries(recipes)) {
 			if (recipe.getResultIndexOf(name)!=-1) {
 				item.addRecipe(recipe);
 			}
@@ -77,6 +77,7 @@ function reloadData() {
 	setUpRecipeSearchList();
 	handleItemSearchInput();
 	recreateActiveRecipeTree();
+	updateDisplayRecipe();
 }
 
 function onload() {

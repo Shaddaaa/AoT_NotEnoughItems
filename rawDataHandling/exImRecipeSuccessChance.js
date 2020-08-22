@@ -1,6 +1,6 @@
 function getRecipeSuccessChances(indentation=0) {
     let recipeSuccessChancesData = {};
-    for (let recipe of recipes) {
+    for (let [id, recipe] of Object.entries(recipes)) {
         recipeSuccessChancesData[recipe.id] = recipe.successChance;
     }
     return JSON.stringify(recipeSuccessChancesData, null, indentation);
@@ -19,8 +19,6 @@ function setRecipeSuccessChances(data) {
     for (let [id, recipeSuccessChance] of Object.entries(data)) {
         recipeSuccessChances[id] = recipeSuccessChance;
     }
-
-    reloadData();
 }
 
 function exportRecipeSuccessChances() {

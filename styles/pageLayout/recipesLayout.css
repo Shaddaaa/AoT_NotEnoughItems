@@ -15,3 +15,8 @@
 
     overflow:auto;
 }
+
+.recipeOptionInput {
+    display: inline;
+    max-width: 12vw;
+}

@@ -95,7 +95,7 @@ function setUpItemSearchList() {
 function setUpRecipeSearchList() {
     let ul = document.getElementById("recipeList");
     ul.innerHTML = "";
-    for (let recipe of recipes) {
+    for (let [id, recipe] of Object.entries(recipes)) {
         let li = document.createElement("li");
         li.id = "recipeLI" + recipe.resultStacks[0].item.name;
         li.setAttribute("data-recipeid", recipe.id);

@@ -1,7 +1,6 @@
 let activeRecipeID;
 
 function handleRecipeSearchInput(event) {
-    console.log("hi");
     let input = document.getElementById("recipeSearchBar").value.toLowerCase();
     let recipeList = document.getElementById("recipeList").children;
     for (let recipeLI of recipeList) {
@@ -21,6 +20,10 @@ function handleRecipeSearchInput(event) {
     }
 }
 
+function updateDisplayRecipe() {
+    displayRecipe(activeRecipeID);
+}
+
 function displayRecipe(recipeID) {
     let display = document.getElementById("recipeDisplay");
     let recipe = recipes[recipeID];
@@ -28,6 +31,7 @@ function displayRecipe(recipeID) {
         display.innerHTML = "";
         activeRecipeID = recipeID;
 
+        //display recipe
         display.innerHTML += "Ingredients: ";
         for (let ingredientStack of recipe.ingredientStacks) {
             display.innerHTML += ingredientStack.size.toFixed(2) + "x " + ingredientStack.item.name + ", ";
@@ -43,7 +47,24 @@ function displayRecipe(recipeID) {
             display.innerHTML += resultStack.size.toFixed(2) + "x " + resultStack.item.name + ", ";
         }
 
+        //display recipe options
+        let successInput = document.getElementById("recipeSuccessChance").children[1];
+        successInput.placeholder = recipe.successChance;
+        successInput.value = null;
+
     } else {
         display.innerHTML = "Not a valid recipe!";
+    }
+}
+
+function handleRecipeSuccessChanceInput(event) {
+    let input = Number.parseFloat(document.getElementById("recipeSuccessChance").children[1].value);
+    if (isNaN(input)) {
+        return;
+    }
+
+    if (event!=null && event.key=="Enter") {
+        recipeSuccessChances[activeRecipeID] = input;
+        reloadData();
     }
 }
