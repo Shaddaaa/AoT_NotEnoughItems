@@ -51,14 +51,12 @@ let craftingRecipeData = {
     4: {
       "ingredients": {
         "Uncut emerald": 1,
-        "Chisel": 1
       },
       "tools": {
         "Chisel": 1
       },
       "results": {
         "Emerald": 1,
-        "Chisel": 1
       }
     },
     5: {
