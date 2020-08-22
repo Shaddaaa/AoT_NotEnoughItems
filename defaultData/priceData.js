@@ -34,6 +34,7 @@ let priceData = {
     "carrot": "5",
     "small spotted bass": "10",
     "oak log": "8",
+    "spruce log": "25",
     "tomato": "8",
     "carrot seed": "1",
     "roasted small spotted bass": "40",

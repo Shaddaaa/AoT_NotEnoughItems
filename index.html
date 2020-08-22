@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="styles/pageLayout/mainLayout.css">
   <link rel="stylesheet" href="styles/pageLayout/recipesLayout.css">
   <link rel="stylesheet" href="styles/pageLayout/settingsLayout.css">
+  <link rel="stylesheet" href="styles/pageLayout/FAQLayout.css">
   <link rel="stylesheet" href="styles/colorScheme.css">
   <link rel="stylesheet" href="styles/general.css">
   <link rel="stylesheet" href="styles/treeView.css">
@@ -14,6 +15,7 @@
   <script src="defaultData/craftingRecipeData.js"></script>
   <script src="defaultData/priceData.js"></script>
   <script src="defaultData/recipeSuccessChances.js"></script>
+  <script src="defaultData/cookingRecipeData.js"></script>
   <script src="itemLogic/itemStack.js"></script>
   <script src="itemLogic/item.js"></script>
   <script src="recipeLogic/recipe.js"></script>
@@ -37,6 +39,7 @@
       <div id="mbMain" class="menubutton" onclick="switchTab('main')">Main</div>
       <div id="mbRecipes" class="menubutton" onclick="switchTab('recipes')">Recipes</div>
       <div id="mbSettings" class="menubutton" onclick="switchTab('settings')">Settings</div>
+      <div id="mbFAQ" class="menubutton" onclick="switchTab('FAQ')">Notes & FAQ</div>
     </div>
     <div id="tabContainer">
       <div id="mainTab" class="tab">
@@ -90,6 +93,12 @@
           </div>
         </div>
         <div id="restSettings"></div>
+      </div>
+      <div id="FAQTab" class="tab" style="display:none">
+        <h1>Important notes:</h1><br>
+        <p>
+          - You can only cook with burnables that burn at least as long as your food requires, this calculator simply ignores this fact for now.
+        </p>
       </div>
     </div>
   </div>

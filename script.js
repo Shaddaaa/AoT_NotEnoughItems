@@ -11,6 +11,8 @@ function reloadData() {
 
 	//add time as a resource
 	priceData["time"] = 0;
+	//add cookingHeat as a resource
+	priceData["cookingHeat"] = 0;
 
 	//create item objects
 	for (let [name, price] of Object.entries(priceData)) {
@@ -23,6 +25,10 @@ function reloadData() {
 	for (let [id, craftingRecipeInput] of Object.entries(craftingRecipeData)) {
 		recipeData[id] = craftingRecipeInput;
 	}
+	for (let [id, cookingRecipeInput] of Object.entries(cookingRecipeData)) {
+		recipeData[id] = cookingRecipeInput;
+	}
+
 
 	//create recipe objects
 	for (let [id, recipeInput] of Object.entries(recipeData)) {

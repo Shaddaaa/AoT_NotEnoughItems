@@ -1,7 +1,6 @@
 //an object with id:recipe pairs
-//each recipe looks like this: {id, ingredients, results, successChance}, 
-//ingredient and results each are objects containing: name:count pairs
-//id and successChance each are simply one name:count pair
+//each recipe looks like this: {ingredients, tools, results}, 
+//ingredients, tools and results each are objects containing: name:count pairs
 let craftingRecipeData = {
   "cr001": {
     "ingredients": {
