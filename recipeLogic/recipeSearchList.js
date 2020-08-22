@@ -21,6 +21,7 @@ function handleRecipeSearchInput(event) {
 }
 
 function updateDisplayRecipe() {
+    handleRecipeSearchInput();
     displayRecipe(activeRecipeID);
 }
 
