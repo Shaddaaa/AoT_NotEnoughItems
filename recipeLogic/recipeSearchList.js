@@ -53,6 +53,9 @@ function displayRecipe(recipeID) {
         successInput.placeholder = recipe.successChance;
         successInput.value = null;
 
+        let enabledInput = document.getElementById("enableRecipe").children[1];
+        enabledInput.checked = enabledRecipes[activeRecipeID];
+
     } else {
         display.innerHTML = "Not a valid recipe!";
     }
@@ -68,4 +71,10 @@ function handleRecipeSuccessChanceInput(event) {
         recipeSuccessChances[activeRecipeID] = input;
         reloadData();
     }
+}
+
+function handleEnableRecipeInput(event) {
+    let input = document.getElementById("enableRecipe").children[1].checked;
+    enabledRecipes[activeRecipeID] = input;
+    reloadData();
 }

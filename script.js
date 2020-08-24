@@ -69,7 +69,8 @@ function reloadData() {
 				resultStacks.push(new ItemStack(items[resultName], amount));
 			}
 		}
-		recipes[id] = new Recipe(ingredientStacks, toolStacks, resultStacks, recipeSuccessChances[id], id);
+		let enabled = enabledRecipes[id] == undefined ? true : enabledRecipes[id];
+		recipes[id] = new Recipe(ingredientStacks, toolStacks, resultStacks, recipeSuccessChances[id], enabled, id);
 		if (recipeSuccessChances[id]==null) {
 			console.log("You forgot to add the recipeSuccessChances again, come on...");
 		}
@@ -84,8 +85,8 @@ function reloadData() {
 		}
 	}
 
-	savePriceList();
-	saveRecipeSuccessChances();
+
+	saveAll();
 	setUpItemSearchList();
 	setUpRecipeSearchList();
 	handleItemSearchInput();
@@ -96,8 +97,6 @@ function reloadData() {
 function onload() {
 	createDefaultSuccessChances();
 
-	loadSettings();
-	loadPriceData();
-	loadRecipeSuccessChances();
+	loadAll();
 	reloadData();
 }

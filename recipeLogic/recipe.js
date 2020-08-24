@@ -1,9 +1,10 @@
 class Recipe {
-	constructor(ingredientStacks, toolStacks, resultStacks, successChance, id) {
+	constructor(ingredientStacks, toolStacks, resultStacks, successChance, enabled, id) {
         this.ingredientStacks = ingredientStacks;
         this.toolStacks = toolStacks;
         this.resultStacks = resultStacks;
         this.successChance = successChance;
+        this.enabled = enabled;
         this.id = id;
     }
     getIngredientIndexOf(itemName) {

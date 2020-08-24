@@ -17,6 +17,7 @@
   <script src="defaultData/recipeSuccessChances.js"></script>
   <script src="defaultData/cookingRecipeData.js"></script>
   <script src="defaultData/miningRecipeData.js"></script>
+  <script src="defaultData/enabledRecipes.js"></script>
   <script src="itemLogic/itemStack.js"></script>
   <script src="itemLogic/item.js"></script>
   <script src="recipeLogic/recipe.js"></script>
@@ -26,6 +27,8 @@
   <script src="rawDataHandling/createDefaultRawData.js"></script>
   <script src="rawDataHandling/exImRawPriceData.js"></script>
   <script src="rawDataHandling/exImRecipeSuccessChance.js"></script>
+  <script src="rawDataHandling/exImEnabledRecipes.js"></script>
+  <script src="rawDataHandling/exImAll.js"></script>
   <script src="settings/settings.js"></script>
   <script src="UIFunctions.js"></script>
   <script src="script.js"></script>
@@ -71,6 +74,10 @@
             <span>Success chance:</span>
             <input class="fancyInput recipeOptionInput" type="text" onkeyup="handleRecipeSuccessChanceInput(event)" name="successChance" autocomplete="off"></input>
           </div>
+          <div id="enableRecipe" class="fancyListItem">
+            <span>Enable recipe:</span>
+            <input type="checkbox" onclick="handleEnableRecipeInput(event)" name="successChance" autocomplete="off"></input>
+          </div>
         </div>
       </div>
       <div id="settingsTab" class="tab" style="display:none">
@@ -82,6 +89,10 @@
           <div class="fancyListItem hoverable flexCol" onclick="exportRecipeSuccessChances()">Export Recipe Success Chances</div>
           <div class="fancyListItem hoverable flexCol" onclick="importRecipeSuccessChances()">Import Recipe Success Chances</div>
           <div class="fancyListItem hoverable flexCol" onclick="resetRecipeSuccessChances()">Reset Recipe Success Chances</div>
+          <div class="fancyListItem"></div>
+          <div class="fancyListItem hoverable flexCol" onclick="exportEnabledRecipes()">Export Enabled Recipes</div>
+          <div class="fancyListItem hoverable flexCol" onclick="importEnabledRecipes()">Import Enabled Recipes</div>
+          <div class="fancyListItem hoverable flexCol" onclick="resetEnabledRecipes()">Reset Enabled Recipes</div>
         </div>
         <div id="settings" class="column">
           <div class="fancyListItem">

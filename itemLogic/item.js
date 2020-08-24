@@ -55,6 +55,9 @@ class Item {
 	getCheapestRecipeTree() {
         let cheapestRecipeNode;
         for (let i = 0; i < this.recipes.length; i++) {
+            if (!this.recipes[i].enabled) {
+                continue;
+            }
             let recipeNode = this.getRecipeTree(i);
             if (cheapestRecipeNode==null || (recipeNode.prodCost < cheapestRecipeNode.prodCost)) {
                 cheapestRecipeNode = recipeNode;
