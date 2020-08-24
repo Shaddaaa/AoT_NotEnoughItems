@@ -54,7 +54,7 @@ function displayRecipe(recipeID) {
         successInput.value = null;
 
         let enabledInput = document.getElementById("enableRecipe").children[1];
-        enabledInput.checked = enabledRecipes[activeRecipeID];
+        enabledInput.checked = recipes[recipeID].enabled;
 
     } else {
         display.innerHTML = "Not a valid recipe!";
@@ -78,3 +78,14 @@ function handleEnableRecipeInput(event) {
     enabledRecipes[activeRecipeID] = input;
     reloadData();
 }
+
+function setEnabledForSearchedRecipes(enabled) {
+    let recipeList = document.getElementById("recipeList").children;
+    for (let recipeLI of recipeList) {
+        if (recipeLI.style.display != "none") {
+            enabledRecipes[recipeLI.getAttribute("data-recipeid")] = enabled;
+        }
+    }
+    reloadData();
+}
+
