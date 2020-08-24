@@ -79,8 +79,10 @@
           </div>
           <div id="enableRecipe" class="fancyListItem">
             <span>Enable recipe:</span>
-            <input type="checkbox" onclick="handleEnableRecipeInput(event)" name="successChance" autocomplete="off"></input>
+            <input type="checkbox" onclick="handleEnableRecipeInput(event)" name="enableRecipe" autocomplete="off"></input>
           </div>
+          <div id="enableAllRecipes" class="fancyListItem hoverable" onclick="setEnabledForSearchedRecipes(true)">Enable all searched recipes</div>
+          <div id="disableAllRecipes" class="fancyListItem hoverable" onclick="setEnabledForSearchedRecipes(false)">Disable all searched recipes</div>
         </div>
       </div>
       <div id="settingsTab" class="tab" style="display:none">
@@ -101,10 +103,6 @@
           <div class="fancyListItem">
               <span>Start the recipe tree expanded</span>
               <input type="checkbox" id="settingsExpandTree" onclick="updateSetting('settingsExpandTree')"></input>
-          </div>
-          <div class="fancyListItem">
-              <span>Time per craft: </span>
-              <input type="text" id="settingsTimePerCraft" class="fancyInput" onkeyup="updateSetting('settingsTimePerCraft')" value=0></input>
           </div>
         </div>
         <div id="restSettings"></div>
