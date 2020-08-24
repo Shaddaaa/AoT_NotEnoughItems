@@ -48,7 +48,10 @@
     <div id="tabContainer">
       <div id="mainTab" class="tab">
         <div id="itemSearch" class="searchInput">
-          <input id="itemSearchBar" class="fancyInput" type="text" onkeyup="handleItemSearchInput(event)" name="itemName" placeholder="Search for an item..." autocomplete="off">
+          <div id="itemSearchBarContainer">
+              <input id="itemSearchBar" class="fancyInput" type="text" onkeyup="handleItemSearchInput(event)" name="itemName" placeholder="Search for an item..." autocomplete="off">
+              <input id="quantityToCraft" class="fancyInput" type="text" onkeyup="recreateActiveRecipeTree(event)" name="quantity" placeholder="Quantity" autocomplete="off"></input>
+          </div>
           <ul id="itemList" class="searchList"></ul>
         </div>
         <div id="recipeTree">

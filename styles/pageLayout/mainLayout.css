@@ -11,6 +11,23 @@
     max-width: 6vw;
 }
 
+#itemSearchBarContainer {
+    display: flex;
+    flex-direction: row;
+
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 5vh;
+}
+
+#itemSearchBar {
+    flex-basis: 70%;
+}
+
+#quantityToCraft {
+    flex-basis: 30%;
+}
+
 #recipeTree {
     flex-basis: 65%;
 

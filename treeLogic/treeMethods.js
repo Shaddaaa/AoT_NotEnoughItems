@@ -34,9 +34,13 @@ function getRecipeFor(itemName) {
 
     if (items[itemName]!=null) {
         let resourceBreakDown = document.getElementById("resourceBreakDown");
+        let quantity = Number.parseFloat(document.getElementById("quantityToCraft").value);
+        if (isNaN(quantity)) {
+            quantity = 1;
+        }
         display.innerHTML = "";
         activeRecipeNode = items[itemName].getCheapestRecipeTree();
-        activeRecipeNode.updateWantedAmount(1);
+        activeRecipeNode.updateWantedAmount(quantity);
         activeRecipeNode.display(display);
 
         let resourceBreakdownTable = createResourceBreakdown(activeRecipeNode);
