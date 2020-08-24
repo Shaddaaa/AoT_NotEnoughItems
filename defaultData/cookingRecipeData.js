@@ -4,7 +4,7 @@
 let cookingRecipeData = {
   "co001": {
     "ingredients": {
-      "cookingHeat": 1,
+      "cooking heat": 1,
       "small guadalupe bass": 1,
     },
     "tools": {
@@ -15,7 +15,7 @@ let cookingRecipeData = {
   },
   "co002": {
     "ingredients": {
-      "cookingHeat": 2,
+      "cooking heat": 2,
       "guadalupe bass": 1,
     },
     "tools": {
@@ -26,7 +26,7 @@ let cookingRecipeData = {
   },
   "co003": {
     "ingredients": {
-      "cookingHeat": 1,
+      "cooking heat": 1,
       "small salmon": 1,
     },
     "tools": {
@@ -37,7 +37,7 @@ let cookingRecipeData = {
   },
   "co004": {
     "ingredients": {
-      "cookingHeat": 2,
+      "cooking heat": 2,
       "salmon": 1,
     },
     "tools": {
@@ -48,7 +48,7 @@ let cookingRecipeData = {
   },
   "co005": {
     "ingredients": {
-      "cookingHeat": 1,
+      "cooking heat": 1,
       "small spotted bass": 1,
     },
     "tools": {
@@ -59,7 +59,7 @@ let cookingRecipeData = {
   },
   "co006": {
     "ingredients": {
-      "cookingHeat": 2,
+      "cooking heat": 2,
       "spotted bass": 1,
     },
     "tools": {
@@ -70,7 +70,7 @@ let cookingRecipeData = {
   },
   "co007": {
     "ingredients": {
-      "cookingHeat": 1,
+      "cooking heat": 1,
       "small carp": 1,
     },
     "tools": {
@@ -81,7 +81,7 @@ let cookingRecipeData = {
   },
   "co008": {
     "ingredients": {
-      "cookingHeat": 2,
+      "cooking heat": 2,
       "carp": 1,
     },
     "tools": {
@@ -92,7 +92,7 @@ let cookingRecipeData = {
   },
   "co009": {
     "ingredients": {
-      "cookingHeat": 1,
+      "cooking heat": 1,
       "small catfish": 1,
     },
     "tools": {
@@ -103,7 +103,7 @@ let cookingRecipeData = {
   },
   "co010": {
     "ingredients": {
-      "cookingHeat": 2,
+      "cooking heat": 2,
       "catfish": 1,
     },
     "tools": {
@@ -114,7 +114,7 @@ let cookingRecipeData = {
   },
   "co011": {
     "ingredients": {
-      "cookingHeat": 1,
+      "cooking heat": 1,
       "small trout": 1,
     },
     "tools": {
@@ -125,7 +125,7 @@ let cookingRecipeData = {
   },
   "co012": {
     "ingredients": {
-      "cookingHeat": 2,
+      "cooking heat": 2,
       "trout": 1,
     },
     "tools": {
@@ -145,7 +145,7 @@ cookingRecipeData["co-001"] = {
     "tools": {
     },
     "results": {
-        "cookingHeat": 1
+        "cooking heat": 1
     }
 }
 
@@ -158,7 +158,7 @@ cookingRecipeData["co-002"] = {
     "tools": {
     },
     "results": {
-        "cookingHeat": 2
+        "cooking heat": 2
     }
 }
 
@@ -171,7 +171,7 @@ cookingRecipeData["co-003"] = {
     "tools": {
     },
     "results": {
-        "cookingHeat": 3
+        "cooking heat": 3
     }
 }
 
@@ -184,6 +184,6 @@ cookingRecipeData["co-004"] = {
     "tools": {
     },
     "results": {
-        "cookingHeat": 4
+        "cooking heat": 4
     }
 }

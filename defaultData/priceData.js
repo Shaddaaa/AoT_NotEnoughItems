@@ -46,6 +46,7 @@ let priceData = {
     "bronze hammerhead": "5",
     "bronze hammer": "125",
     "iron ore": "20",
+    "silver ore": "25",
     "small carp": "6",
     "uncut opal": "2000",
     "small salmon": "8",

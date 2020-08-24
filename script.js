@@ -11,8 +11,10 @@ function reloadData() {
 
 	//add time as a resource
 	priceData["time"] = 0;
-	//add cookingHeat as a resource
-	priceData["cookingHeat"] = 0;
+	//add cooking heat as a resource
+	priceData["cooking heat"] = 0;
+	//add food mining value as a resource
+	priceData["food mining value"] = 0;
 
 	//create item objects
 	for (let [name, price] of Object.entries(priceData)) {
@@ -28,7 +30,9 @@ function reloadData() {
 	for (let [id, cookingRecipeInput] of Object.entries(cookingRecipeData)) {
 		recipeData[id] = cookingRecipeInput;
 	}
-
+	for (let [id, miningRecipeInput] of Object.entries(miningRecipeData)) {
+		recipeData[id] = miningRecipeInput;
+	}
 
 	//create recipe objects
 	for (let [id, recipeInput] of Object.entries(recipeData)) {
@@ -66,6 +70,9 @@ function reloadData() {
 			}
 		}
 		recipes[id] = new Recipe(ingredientStacks, toolStacks, resultStacks, recipeSuccessChances[id], id);
+		if (recipeSuccessChances[id]==null) {
+			console.log("You forgot to add the recipeSuccessChances again, come on...");
+		}
 	}
 
 	//add recipes to item objects
