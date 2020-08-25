@@ -47,6 +47,28 @@ class RecipeNode {
         }
         return total;
     }
+
+    getTotalRemains() {
+        let remains = [];
+        if(this.recipe==null) {
+            return remains;
+        }
+        for (let resultStack of this.recipe.resultStacks) {
+            if (resultStack.item.name!=this.wantedItem.name) {
+                let wantedIndex = this.recipe.getResultIndexOf(this.wantedItem.name);
+                let made = this.recipe.resultStacks[wantedIndex].size*this.recipe.successChance;
+                remains.push(cloneItemStack(resultStack, this.wantedAmount/made));
+            }
+        }
+        for (let i = 0; i < this.ingredientChildNodes.length; i++) {
+            remains = remains.concat(this.ingredientChildNodes[i].getTotalRemains());
+        }
+        for (let i = 0; i < this.toolChildNodes.length; i++) {
+            remains = remains.concat(this.toolChildNodes[i].getTotalRemains());
+        }
+        return remains;
+    }
+
     //sets this.wantedAmount and recursively updates childNodes
     updateWantedAmount(newWantedAmount) {
         this.wantedAmount = newWantedAmount;

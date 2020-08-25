@@ -13,8 +13,7 @@
 }
 
 .resourceBreakdownTable > tr > td {
-    border-style: solid;
-    border-width: 0.1vw;
+    padding: 0.1vw;
 }
 
 .resourceBreakdownTable > tr > td:nth-child(2) {

@@ -12,8 +12,12 @@ function switchTab(name) {
 
 //returns a html table containing the resource breakdown
 function createResourceBreakdown(recipeNode) {
+    let div = document.createElement("div");
     let table = document.createElement("table");
+    div.appendChild(table);
+
     table.classList.toggle("resourceBreakdownTable");
+
     
     let resources = recipeNode.getAllBaseResourceNames();
     for (let resource of resources) {
@@ -29,7 +33,31 @@ function createResourceBreakdown(recipeNode) {
 
         table.appendChild(tr);
     }
-    return table;
+    
+    let h1 = document.createElement("h1");
+    h1.innerHTML += "Additional Results:";
+    div.appendChild(h1);
+    
+    let remainsTable = document.createElement("table");
+    remainsTable.classList.toggle("resourceBreakdownTable");
+
+    let remains = recipeNode.getTotalRemains();
+    for (let stack of remains) {
+        let tr = document.createElement("tr");
+
+        let td1 = document.createElement("td");
+        td1.innerHTML = upEveryFirstLetter(stack.item.name) + ":";
+        tr.appendChild(td1);
+
+        let td2 = document.createElement("td");
+        td2.innerHTML = stack.size.toFixed(2);
+        tr.appendChild(td2);
+
+        remainsTable.appendChild(tr);
+    }
+    div.appendChild(remainsTable);
+
+    return div;
 }
 
 function setUpItemSearchList() {

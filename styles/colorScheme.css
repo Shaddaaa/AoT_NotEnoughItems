@@ -67,10 +67,6 @@ html {
     border-color: white;
 }
 
-.resourceBreakdownTable > tr > td {
-    border-color: black;
-}
-
 #settingsTab {
     background: purple;
 }
