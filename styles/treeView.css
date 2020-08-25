@@ -1,5 +1,5 @@
 /* Remove default bullets */
-ul {
+.nested {
     list-style-type: none;
 }
 
