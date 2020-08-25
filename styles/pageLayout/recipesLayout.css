@@ -1,10 +1,37 @@
 #recipeDisplay {
+    display: flex;
+    flex-direction: column;
     flex-basis: 50%;
 
     border-right-style: solid;
     border-right-width: 0.1vw;
 
     overflow:auto;
+}
+
+#recipeDisplay > table {
+    border-collapse: collapse;
+
+    border-style: solid;
+    border-width: 0.1vw;
+
+    width: 100%;
+}
+
+#recipeDisplay > table > tr > th {
+    border-bottom-style: solid;
+    border-width: 0.1vw;
+}
+
+#recipeDisplay > table > tr > * {
+    padding: 0.2vw;
+    text-align: center;
+    width: 25%;
+}
+
+#recipeDisplay > table > tr > * {
+    padding: 0.2vw;
+    text-align: center;
 }
 
 #recipeOptions {
