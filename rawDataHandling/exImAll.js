@@ -1,4 +1,5 @@
 function saveAll() {
+	saveSettings();
 	savePriceList();
 	saveRecipeSuccessChances();
 	saveEnabledRecipes();

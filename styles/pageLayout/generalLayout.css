@@ -51,11 +51,6 @@ body {
     border-width: 0.1vw;
 }
 
-.menubutton:hover {
-    cursor: pointer;
-    text-decoration: underline;
-}
-
 .menubutton:last-child {
     border-right-style: solid;
     border-width: 0.1vw;

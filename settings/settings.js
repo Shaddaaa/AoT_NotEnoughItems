@@ -16,11 +16,22 @@ function loadSettings() {
         settings["settingsExpandTree"] = true;
     }
 
+    if (settings["settingsColorScheme"]==null) {
+        settings["settingsColorScheme"] = "styles/darkColorScheme.css";
+    }
     for (let [key,value] of Object.entries(settings)) {
         let element = document.getElementById(key);
         switch (key) {
             case "settingsExpandTree":
                 element.checked = value;
+                break;
+            case "settingsColorScheme":
+                for (let child of element.children) {
+                    if (child.getAttribute("value") == value) {
+                        child.setAttribute("selected", "selected");
+                        break;
+                    }
+                }
                 break;
         }
     }
@@ -34,6 +45,10 @@ function updateSetting(id) {
     switch (id) {
         case "settingsExpandTree":
             newValue = element.checked;
+            break;
+        case "settingsColorScheme":
+            newValue = element.value;
+            bReloadData = true;
             break;
     }
     settings[id] = newValue;

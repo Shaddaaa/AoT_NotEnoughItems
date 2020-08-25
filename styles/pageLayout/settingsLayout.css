@@ -20,7 +20,3 @@
 .flexCol {
     flex-direction: column;
 }
-
-#restSettings {
-    flex-basis: 70%;
-}

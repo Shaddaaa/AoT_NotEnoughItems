@@ -1,5 +1,5 @@
 .arrowRight {
-    border: solid white;
+    border-style: solid;
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
@@ -8,4 +8,9 @@
     box-sizing: content-box;
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
+}
+
+.hoverable:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }

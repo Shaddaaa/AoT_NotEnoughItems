@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles/pageLayout/recipesLayout.css">
   <link rel="stylesheet" href="styles/pageLayout/settingsLayout.css">
   <link rel="stylesheet" href="styles/pageLayout/FAQLayout.css">
-  <link rel="stylesheet" href="styles/colorScheme.css">
+  <link id="colorSchemeCSS" rel="stylesheet" href="styles/brightColorScheme.css">
   <link rel="stylesheet" href="styles/general.css">
   <link rel="stylesheet" href="styles/treeView.css">
   <link rel="stylesheet" href="styles/resourceBreakDownTable.css">
@@ -41,10 +41,10 @@
 <body onload="onload()">
   <div id="mainContainer">
     <div id="menu">
-      <div id="mbMain" class="menubutton" onclick="switchTab('main')">Main</div>
-      <div id="mbRecipes" class="menubutton" onclick="switchTab('recipes')">Recipes</div>
-      <div id="mbSettings" class="menubutton" onclick="switchTab('settings')">Settings</div>
-      <div id="mbFAQ" class="menubutton" onclick="switchTab('FAQ')">Notes & FAQ</div>
+      <div id="mbMain" class="menubutton hoverable" onclick="switchTab('main')">Main</div>
+      <div id="mbRecipes" class="menubutton hoverable" onclick="switchTab('recipes')">Recipes</div>
+      <div id="mbSettings" class="menubutton hoverable" onclick="switchTab('settings')">Settings</div>
+      <div id="mbFAQ" class="menubutton hoverable" onclick="switchTab('FAQ')">Notes & FAQ</div>
     </div>
     <div id="tabContainer">
       <div id="mainTab" class="tab">
@@ -105,8 +105,14 @@
               <span>Start the recipe tree expanded</span>
               <input type="checkbox" id="settingsExpandTree" onclick="updateSetting('settingsExpandTree')"></input>
           </div>
+          <div class="fancyListItem">
+            <span>Chose color scheme</span>
+            <select class="fancyInput" type="checkbox" id="settingsColorScheme" onclick="updateSetting('settingsColorScheme')">
+              <option value="styles/brightColorScheme.css">Bright Design</option>
+              <option value="styles/darkColorScheme.css">Dark Design</option>
+            </select>
         </div>
-        <div id="restSettings"></div>
+        </div>
       </div>
       <div id="FAQTab" class="tab" style="display:none">
         <div class="FAQPoint">

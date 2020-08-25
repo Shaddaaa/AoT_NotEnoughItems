@@ -87,11 +87,16 @@ function reloadData() {
 
 
 	saveAll();
+	updateStyle();
 	setUpItemSearchList();
 	setUpRecipeSearchList();
 	handleItemSearchInput();
 	recreateActiveRecipeTree();
 	updateDisplayRecipe();
+}
+
+function updateStyle() {
+	document.getElementById("colorSchemeCSS").href = settings["settingsColorScheme"];
 }
 
 function onload() {
