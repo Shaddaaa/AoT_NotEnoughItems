@@ -1,3 +1,28 @@
 #FAQTab {
     flex-direction: column;
 }
+
+.FAQquestion {
+    font-size: 1.5vw;
+}
+
+.FAQPoint {
+    padding: 1vw;
+}
+
+.FAQul {
+    list-style: none; /* Remove default bullets */
+}
+
+.FAQul li {
+    padding: 0.5vw;
+}
+
+.FAQul li::before {
+    content: "\2022";
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: 1em;
+}
