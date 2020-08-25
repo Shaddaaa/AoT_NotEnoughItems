@@ -187,3 +187,9 @@ cookingRecipeData["co-004"] = {
         "cooking heat": 4
     }
 }
+
+for (let [key,data] of Object.entries(cookingRecipeData)) {
+    if (key.indexOf("-")==-1) {
+      data.ingredients["time"] = 90;
+    }
+}
