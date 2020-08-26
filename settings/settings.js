@@ -1,24 +1,37 @@
 //default settings values:
 let settings = {};
 
-function saveSettings() {
-    localStorage.setItem("settings", JSON.stringify(settings));
+function getSettings(indentation=0) {
+    return JSON.stringify(settings, null, indentation);
 }
 
-function loadSettings() {
-    let tmp = localStorage.getItem("settings");
-    if (tmp!=null) {
-        settings = JSON.parse(tmp);
+function getSavedSettings() {
+    let data = localStorage.getItem("settings");
+    if (data==null) {
+        data = {};
+    }
+    return data;
+}
+
+function setSettings(data) {
+    try {
+        if (data==null) {
+            throw "Data is null";
+        }
+        data = JSON.parse(data);
+    } catch (e) {
+        return;
     }
 
     //default values:
-    if (settings["settingsExpandTree"]==null) {
-        settings["settingsExpandTree"] = true;
+    if (data["settingsExpandTree"]==null) {
+        data["settingsExpandTree"] = true;
     }
 
-    if (settings["settingsColorScheme"]==null) {
-        settings["settingsColorScheme"] = "styles/darkColorScheme.css";
+    if (data["settingsColorScheme"]==null) {
+        data["settingsColorScheme"] = "styles/darkColorScheme.css";
     }
+
     for (let [key,value] of Object.entries(settings)) {
         let element = document.getElementById(key);
         switch (key) {
@@ -35,6 +48,31 @@ function loadSettings() {
                 break;
         }
     }
+
+    settings = data;
+}
+
+function exportSettings() {
+    copyTextToClipboard(getSettings());
+}
+
+function importSettings() {
+    let input = window.prompt("Input the settings data!");
+    setSettings(input);
+    reloadData();
+}
+
+function saveSettings() {
+    localStorage.setItem("settings", JSON.stringify(settings));
+}
+
+function loadSettings() {
+    setSettings(localStorage.getItem("settings"));
+}
+
+function resetSettings() {
+    localStorage.removeItem("settings");
+    location.reload();
 }
 
 function updateSetting(id) {
@@ -59,3 +97,4 @@ function updateSetting(id) {
         recreateActiveRecipeTree();
     }
 }
+

@@ -1,9 +1,17 @@
-function getEnabledRecipes() {
+function getEnabledRecipes(indentation=0) {
     let enabledRecipeData = {};
     for (let [id, recipe] of Object.entries(recipes)) {
         enabledRecipeData[recipe.id] = recipe.enabled;
     }
-    return JSON.stringify(enabledRecipeData, null);
+    return JSON.stringify(enabledRecipeData, null, indentation);
+}
+
+function getSavedEnabledRecipes(indentation=0) {
+    let data = localStorage.getItem("enabledRecipes");
+    if (data==null) {
+        data = {};
+    }
+    return data;
 }
 
 function setEnabledRecipes(data) {

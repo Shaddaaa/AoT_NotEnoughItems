@@ -100,6 +100,7 @@ function updateStyle() {
 }
 
 function onload() {
+	checkForReset();
 	createDefaultSuccessChances();
 
 	loadAll();

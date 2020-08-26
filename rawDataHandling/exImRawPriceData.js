@@ -1,9 +1,17 @@
-function getRawPriceData() {
+function getRawPriceData(indentation=0) {
     let data = {};
     for (let [key, item] of Object.entries(items)) {
         data[item.name] = item.price;
     }
-    return JSON.stringify(data);
+    return JSON.stringify(data, null, indentation);
+}
+
+function getSavedRawPriceData(indentation=0) {
+    let data = localStorage.getItem("priceData");
+    if (data==null) {
+        data = {};
+    }
+    return data;
 }
 
 function setRawPriceData(data) {

@@ -6,6 +6,14 @@ function getRecipeSuccessChances(indentation=0) {
     return JSON.stringify(recipeSuccessChancesData, null, indentation);
 }
 
+function getSavedRecipeSuccessChances(indentation=0) {
+    let data = localStorage.getItem("recipeSuccessChances");
+    if (data==null) {
+        data = {};
+    }
+    return data;
+}
+
 function setRecipeSuccessChances(data) {
     try {
         if (data==null) {
