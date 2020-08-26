@@ -32,17 +32,19 @@ function setSettings(data) {
         data["settingsColorScheme"] = "styles/darkColorScheme.css";
     }
 
-    for (let [key,value] of Object.entries(settings)) {
+    for (let [key,value] of Object.entries(data)) {
         let element = document.getElementById(key);
         switch (key) {
             case "settingsExpandTree":
                 element.checked = value;
+                console.log(value);
                 break;
             case "settingsColorScheme":
                 for (let child of element.children) {
                     if (child.getAttribute("value") == value) {
                         child.setAttribute("selected", "selected");
-                        break;
+                    } else {
+                        child.removeAttribute("selected");
                     }
                 }
                 break;
