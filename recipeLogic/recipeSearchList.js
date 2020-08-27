@@ -50,7 +50,6 @@ function displayRecipe(recipeID) {
             let ingredientStack = recipe.ingredientStacks[i];
             let toolStack = recipe.toolStacks[i];
             let resultStack = recipe.resultStacks[i];
-            console.log(i);
             let tr = document.createElement("tr");
             let td1 = document.createElement("td");
             let td2 = document.createElement("td");

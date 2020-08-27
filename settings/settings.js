@@ -37,7 +37,6 @@ function setSettings(data) {
         switch (key) {
             case "settingsExpandTree":
                 element.checked = value;
-                console.log(value);
                 break;
             case "settingsColorScheme":
                 for (let child of element.children) {
