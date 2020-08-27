@@ -10,11 +10,14 @@ function reloadData() {
 	recipes = {};
 
 	//add time as a resource
-	priceData["time"] = 0;
+	if (priceData["time"]==null)
+		priceData["time"] = 0;
 	//add cooking heat as a resource
-	priceData["cooking heat"] = 0;
+	if (priceData["cooking heat"]==null)
+		priceData["cooking heat"] = 0;
 	//add food mining value as a resource
-	priceData["food mining value"] = 0;
+	if (priceData["food mining value"]==null)
+		priceData["food mining value"] = 0;
 
 	//create item objects
 	for (let [name, price] of Object.entries(priceData)) {
